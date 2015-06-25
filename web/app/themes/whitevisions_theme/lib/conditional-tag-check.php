@@ -16,7 +16,7 @@ class ConditionalTagCheck {
 
   public $result = true;
 
-  public function __construct($conditionals = []) {
+  public function __construct($conditionals = array()) {
     $this->conditionals = $conditionals;
 
     $conditionals = array_map(array($this, 'checkConditionalTag'), $this->conditionals);
