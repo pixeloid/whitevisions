@@ -59,7 +59,8 @@ function asset_path($filename) {
   }
 
   if (array_key_exists($file, $manifest->get())) {
-    return $dist_path . $directory . $manifest->get()[$file];
+    $r = $dist_path . $directory . $manifest->get();
+    return $r[$file];
   } else {
     return $dist_path . $directory . $file;
   }
