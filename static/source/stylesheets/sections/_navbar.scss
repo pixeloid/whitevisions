@@ -1,0 +1,88 @@
+#top-nav{
+
+	border: none;
+	background: rgba(255,255,255,0.95);	
+	@media (min-width: $screen-sm-min) { 
+		background: none;
+		&.inverse{
+			background: rgba(255,255,255,0.95);	
+		}
+	}
+
+	.navbar-toggle{
+		border: none;
+		&:hover{
+			background: transparent;
+		}
+		color: $gray;
+
+		.icon-bar {
+		    background-color: $brand-primary;
+		}
+	} 
+
+	> .container{
+		.navbar-collapse{
+
+			.navbar-nav{
+				padding-top: 30px;
+				text-align: center;
+				text-transform: uppercase;
+				@media (min-width: $screen-sm-min) { 
+					padding-top: 0px;
+					text-align: center;
+					float: none;
+					margin-left: -20px;
+					li{
+						display: inline-block;
+						float: none;
+						&.center{
+							margin-right: 110px;
+						}
+					}
+				}
+
+			}
+		}
+
+	} 
+}
+.navbar-collapse{
+	.inverse &{
+		@include box-shadow(0 2px 2px rgba(0,0,0,.05));
+	}
+}
+.navbar-brand,
+.navbar-brand:hover{
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 25px;
+	height: auto;
+	z-index: 100;
+	padding: 3px;
+
+
+	@media (min-width: $screen-sm-min) { 
+		left: 50%;
+		margin-left: -50px !important;
+		padding: 5px;
+		background: transparent;
+
+		.inverse &{
+			background: #fff;	
+			@include box-shadow(0 2px 4px rgba(0,0,0,.05));
+		}
+
+	}
+
+	img{
+		height: 60px;
+
+		@media (min-width: $screen-sm-min) { 
+			height: 80px;
+		}
+
+	}
+}
+

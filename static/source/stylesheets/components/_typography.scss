@@ -1,0 +1,40 @@
+b{
+		font-family: 'Gotham Medium', sans-serif;
+	font-weight: normal;
+}
+h2{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 12px;
+	color: $gray;
+	margin: 1em 0 -1em;
+	font-family: 'Gotham Medium', sans-serif;
+	.blocked &{
+		margin: 3em 0 2em;
+		font-family: 'Gotham Light', sans-serif;
+		font-size: 16px;
+
+		&:after{
+			content: " ";
+			display: block;
+			width: 80px;
+			margin: 1em auto;
+			border-top: 1px solid $brand-primary
+		}
+
+	}
+}
+
+h3{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 14px;
+	margin: 1em 0;
+	font-family: 'Gotham Light', sans-serif;
+	font-weight: normal;
+}
+
+h4{
+	text-transform: uppercase;
+	font-size: 11px;
+}

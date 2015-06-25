@@ -1,0 +1,65 @@
+.tabbed{
+
+	h3{
+		margin-top: 0;
+		margin-bottom: 30px;
+		font-family: 'Gotham Book', sans-serif;
+		display: none;
+		@media (min-width: $screen-sm-min) { 
+			display: block;
+		}
+	}
+
+	.tab-content{
+
+		padding-top: 50px;
+		@media (min-width: $screen-sm-min) { 
+			text-align: justify;
+		}
+
+	}
+
+	.nav-list{
+		margin-bottom: 50px;
+		li{
+			text-transform: uppercase;
+			line-height: 1.3em;
+			font-size: 13px;
+			border-top: 1px solid #eee;
+			&:first-child{
+				border: none;
+			}
+			a{
+				padding-left: 0;
+				padding-right: 0;
+			}
+			a:hover, &.active a{
+				color: $link-color;
+			}
+
+			a{
+				color: $gray-base;
+			}
+		}
+	}
+	.sticky-outer{
+		position: static;
+	}
+	aside{
+		&.bottomed{
+			left: 0px !important;
+		}
+		padding-top: 50px;
+
+		h2{
+			margin-top: 0;
+		}
+		
+		&.affix{
+
+		}
+
+
+	}
+
+}
