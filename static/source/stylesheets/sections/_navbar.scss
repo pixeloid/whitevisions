@@ -23,6 +23,10 @@
 
 	> .container{
 		.navbar-collapse{
+			font-size: 12px;
+			@media (min-width: $screen-md-min) { 
+				font-size: 14px;
+			}
 
 			.navbar-nav{
 				padding-top: 30px;
@@ -33,11 +37,19 @@
 					text-align: center;
 					float: none;
 					margin-left: -20px;
-					li{
+					>li{
 						display: inline-block;
 						float: none;
 						&.center{
 							margin-right: 110px;
+						}
+
+						a{
+							padding:15px 10px;
+							@media (min-width: $screen-md-min) { 
+								padding:15px;
+							}
+
 						}
 					}
 				}
@@ -86,3 +98,14 @@
 	}
 }
 
+
+.dropdown-menu{
+	@include box-shadow(none);
+	border: none;
+	min-width: 0;
+	padding: 0;
+	li{
+		display: block;
+	}
+
+}

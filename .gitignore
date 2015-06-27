@@ -11,6 +11,7 @@ web/app/uploads/*
 !web/app/mu-plugins/bedrock-autoloader.php
 
 # WordPress
+web/wp
 web/.htaccess
 
 # WP-CLI
@@ -32,3 +33,6 @@ node_modules
 # Vagrant
 bin
 .vagrant
+
+
+static/bower_components

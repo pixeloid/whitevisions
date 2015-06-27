@@ -1,25 +1,39 @@
 .swiper-container {
 	width: 100%;
-	margin: 20px auto;
+	margin: 0px auto;
  
+}
+
+.swiper-shadow{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+	top: 0;
+	left:0;
+	z-index: 1;
+	@include box-shadow(inset 0 0px 6px rgba(0,24,0,.9));
+
 }
 
 .swiper-button-next{
 	background-image: url(../images/arrow_right.svg);
+	background-position: right 50% ;
 }
 .swiper-button-prev{
 	background-image: url(../images/arrow_left.svg);
+	background-position: left 50% ;
 }
 .swiper-button-next,
 .swiper-button-prev{
 	display: none;
 	@media (min-width: $screen-sm-min) { 
 		display: block;
-		width: 124px;
-		height: 104px;
+		width: 40%;
+		height: 100%;
 		background-size: auto;
-		background-position: 50% 50%;
-
+		z-index: 10;
+		top:0;
 	}
 }
 

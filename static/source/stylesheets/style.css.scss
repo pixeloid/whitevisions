@@ -31,14 +31,14 @@
 
 
 	@include clearfix;
-	@include box-shadow(0 0px 8px rgba(0,4,0,.12));
+	@include box-shadow(0 0px 6px rgba(0,2,0,.18));
 	background: white;
 	line-height: 2;
 }
 
 
 .separator-illustration{
-	margin: 80px 0 30px;
+	margin: 0 0 0px;
 	height: 400px;
 	.separator-illustration__shadow{
 		height: 400px;
@@ -58,7 +58,7 @@
 }
 
 section{
-	margin-top: 130px;
+	margin-top: 105px;
 }
 
 
@@ -78,7 +78,12 @@ footer .blocked{
 }
 #gallery-beauty,
 #gallery-eskuvo{
-	padding-top: 40px;
+	padding-top: 0px;
+	margin-top: 35px; 
+	h2{
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
 }
 #home{
 	position: relative;
@@ -89,6 +94,14 @@ footer .blocked{
 }
 
 
+body{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 #contact-form{
 	form{
@@ -154,5 +167,18 @@ footer .blocked{
 				white-space: nowrap;
 			}
 		}
+
+		.copyright{
+			background: #555;
+			text-align: center;
+			padding: 6px 0;
+			color: #fff;
+			p{
+				margin: 0;
+				font-size: 11px;
+			}
+		}
+
 	}
+
 }

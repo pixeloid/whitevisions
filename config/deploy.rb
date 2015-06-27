@@ -2,6 +2,7 @@ set :application, 'whitevisions'
 set :repo_url, 'https://github.com/pixeloid/whitevisions.git'
 set :composer_install_flags, '--no-dev --no-interaction --quiet --optimize-autoloader --ignore-platform-reqs'
 set :tmp_dir, '/var/www/virtual/pixeloid.hu/dev/wv/tmp'
+set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
 
 # Branch options
 # Prompts for the branch name (defaults to current branch)

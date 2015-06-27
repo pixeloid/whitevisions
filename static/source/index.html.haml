@@ -40,12 +40,12 @@
           %h2
             Rólam
           .row
-            .col-sm-10.col-sm-push-2.text-left
+            .col-sm-9.col-sm-push-3.text-left
               %p
                 A kezdetben portrékat, később modellportfóliókat készítettem. A beauty fotózások alkalmával lehetőségem nyílt megfigyelni a sminkesek, és fodrászok munkáit, és felismerni a részletek fontosságát. A fotográfia ezen területének egyik sajátossága, hogy a fotóst egy idő után felkérik katalógusok, és divatanyagok fotózására is, hiszen a beauty és a divat szinte elválaszthatatlan egymástól. Kísérleti szándékkal a sport-, akció-, és riportfotó területén tett látogatásaim eredményeként megtanultam a mozgás fotózását, és azt, hogy egy esemény bármely pillanatát magabiztosan meg tudjam örökíteni.  
               %p Fotográfiai tanulmányaimat a fotózások mellett végeztem. Ezalatt a fényképezés több területén is hasznosítható tudással lettem gazdagabb, valamint sok olyan művészeti, és vizuális impulzus ért, amely a mai napig megjelenik munkáimban.  
               %p Fotográfusként az élet számos területén találok inspirációt, és hatással van rám sok olyan alkotó, képzőművész is, aki a saját szakterületén a maximumra törekszik.     
-            .col-sm-2.col-sm-pull-10
+            .col-sm-3.col-sm-pull-9
               %img.img-responsive{:src => "http://placehold.it/300x400", :alt => ""}/
               %h4 Dévai Ákos
 
@@ -73,7 +73,7 @@
                       %a{"aria-controls" => "jegyes", "data-toggle" => "tab", :href => "#jegyes", :role => "tab"} JEGYES FOTÓZÁS (E-SESSION)
                     %li{:role => "presentation"}
                       %a{"aria-controls" => "fotosarok", "data-toggle" => "tab", :href => "#fotosarok", :role => "tab"} FOTÓSAROK+FOTÓ
-                  %img.img-responsive{:src => "images/sample_image_1.jpg", :alt => ""}/
+                  %img.img-responsive{:src => "", :alt => ""}/
               .col-md-8.col-md-push-1.tab-content
                 #kreativ-eskuvo.text-left.tab-pane.fade.in.active
                   %h3
@@ -103,7 +103,8 @@
                   %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed purus nulla. Etiam magna nisi, placerat et nisi et, malesuada pretium augue. Suspendisse mi sem, laoreet eu rutrum ut, molestie et ligula. Cras mollis mauris vitae nisi lobortis, eget efficitur lectus ullamcorper. Quisque lorem purus, blandit ac felis id, euismod sollicitudin odio. Nulla dapibus pulvinar metus, non fermentum velit vehicula sit amet. Sed non quam non quam condimentum pretium. Proin euismod egestas commodo. Vestibulum lectus diam, faucibus eget lacus eu, faucibus varius velit. Curabitur in facilisis lectus. Donec et neque purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed purus nulla. Etiam magna nisi, placerat et nisi et, malesuada pretium augue. Suspendisse mi sem, laoreet eu rutrum ut, molestie et ligula. Cras mollis mauris vitae nisi lobortis, eget efficitur lectus ullamcorper. Quisque lorem purus, blandit ac felis id, euismod sollicitudin odio. Nulla dapibus pulvinar metus, non fermentum velit vehicula sit amet. Sed non quam non quam condimentum pretium. Proin euismod egestas commodo. Vestibulum lectus diam, faucibus eget lacus eu, faucibus varius velit. Curabitur in facilisis lectus. Donec et neque purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed purus nulla. Etiam magna nisi, placerat et nisi et, malesuada pretium augue. Suspendisse mi sem, laoreet eu rutrum ut, molestie et ligula. Cras mollis mauris vitae nisi lobortis, eget efficitur lectus ullamcorper. Quisque lorem purus, blandit ac felis id, euismod sollicitudin odio. Nulla dapibus pulvinar metus, non fermentum velit vehicula sit amet. Sed non quam non quam condimentum pretium. Proin euismod egestas commodo. Vestibulum lectus diam, faucibus eget lacus eu, faucibus varius velit. Curabitur in facilisis lectus. Donec et neque purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed purus nulla. Etiam magna nisi, placerat et nisi et, malesuada pretium augue. Suspendisse mi sem, laoreet eu rutrum ut, molestie et ligula. Cras mollis mauris vitae nisi lobortis, eget efficitur lectus ullamcorper. Quisque lorem purus, blandit ac felis id, euismod sollicitudin odio. Nulla dapibus pulvinar metus, non fermentum velit vehicula sit amet. Sed non quam non quam condimentum pretium. Proin euismod egestas commodo. Vestibulum lectus diam, faucibus eget lacus eu, faucibus varius velit. Curabitur in facilisis lectus. Donec et neque purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed purus nulla. Etiam magna nisi, placerat et nisi et, malesuada pretium augue. Suspendisse mi sem, laoreet eu rutrum ut, molestie et ligula. Cras mollis mauris vitae nisi lobortis, eget efficitur lectus ullamcorper. Quisque lorem purus, blandit ac felis id, euismod sollicitudin odio. Nulla dapibus pulvinar metus, non fermentum velit vehicula sit amet. Sed non quam non quam condimentum pretium. Proin euismod egestas commodo. Vestibulum lectus diam, faucibus eget lacus eu, faucibus varius velit. Curabitur in facilisis lectus. Donec et neque purus.
 
   %section
-    .separator-illustration
+    .separator-illustration{"data-zs-overlay" => "dots", "data-zs-speed" => 20000, "data-zs-src" => "[\"images/illustration/2.jpg\", \"images/illustration/3.jpg\", \"images/illustration/6.jpg\"]"}
+      .separator-illustration__shadow
 
   .container
     %section.row#info-beauty
@@ -122,12 +123,14 @@
                     %li{:role => "presentation"}
                       %a{"aria-controls" => "eskuvoi-smink", "data-toggle" => "tab", :href => "#eskuvoi-smink", :role => "tab"} ESKÜVŐI SMINK
                   
-                  %img.img-responsive{:src => "images/sample_image_1.jpg", :alt => ""}/
+                  %img.img-responsive{:src => "", :alt => ""}/
 
               .col-md-8.col-md-push-1.tab-content
                 #eskuvoi-haj.tab-pane.fade.in.active
                   %h3
                     ESKÜVŐI HAJ
+                  
+                    %img{:alt => "", :src  => "http://shiatsu-egyesulet.hu/white-visions.com/wp-content/uploads/2014/07/DSC9452b.jpg"}/
 
                   %p Ahhoz, hogy az esküvőd olyan csodálatos legyen mint, ahogy azt megálmodtad, elengedhetetlen a tökéletes külső és belső harmónia. Ezen a mesés napon a külsőd legfontosabb kiegészítője természetesen az esküvői frizura és a smink. Azt, hogy a nagy napon milyen frizurát viselsz, elsősorban a hajad adottsága és állapota határozza meg. Az esküvőd előtt 3-4 hónappal ajánlott a hajad ápoltságára nagyobb hangsúlyt fektetni, mint a hétköznapokban. Még a natúr haj is ápolást igényel, a festet, színezett pedig speciális védelemre szorulhat különösen ebben az időszakban. Bármilyen frizurát is szeretnél, sokkal jobban fog mutatni, ha az egy szépen fénylő, egészséges szerkezetű hajalapból készül. A festést, színezést, tartós hullámot, esetleg hajegyenesítést az esküvőt megelőző hétre célszerű időzíteni, így a hatás friss lesz, és lenövésmentes. Mindenképpen ajánlatos elkerülni, a színekkel és a formákkal az olyan kísérletezés, ami jelentős változás eredményez a nagy nap előtt. 
 
@@ -138,6 +141,9 @@
                 #eskuvoi-smink.tab-pane.fade.in
                   %h3
                     ESKÜVŐI Smink
+
+                  %img{:alt => "", :src  => "http://shiatsu-egyesulet.hu/white-visions.com/wp-content/uploads/2014/07/untitled-0157.jpg"}/
+
                   %p A menyasszony tökéletes megjelenéséhez az esküvői sminknek is hasonlóan fontos szerep jut, mint a ruhának és a frizurának. Azonban jó, ha szerepét nem lépi túl, hiszen nem az a cél, hogy a smink önmagában legyen szép, sokkal inkább a tökéletes összhatás elérésére érdemes törekedni. Az esküvői smink lehet természetes, natúr hatású, vagy romantikus, de lehet dívás, akár extravagáns jellegű is, ez leginkább a menyasszony személyiségének függvénye. 
 
                   %p Bármelyik stílust is érzed magadénak, mindenképpen javasolt profi szakemberre bízni a smink elkészítését. Egy profi sminkes, mielőtt elkészítené az esküvői sminkedet, a személyes kívánságaid mellett még nagyon sok szempontot vesz figyelembe. Az arc-, a szem-, és a szájforma, a bőrtípus, a bőrszín, a bőr érzékenysége, a szem-, és a hajszín, a ruha és kiegészítők színe és stílusa. Az esküvői smink nem egyenlő az alkalmi sminkel, alkalmi ugyan, de sokkal több annál, hiszen több kritériumnak is meg kell felelnie. Az esküvői smink, legyen tartós, ugyanakkor ne legyen maszkhatású. Szinte alapkövetelmény, hogy vízálló, vagyis könnyálló legyen. Jól kell kinéznie nappalifényben és mesterséges megvilágítás mellett is, akárcsak fotón és filmen. 
@@ -151,7 +157,8 @@
 
 
   %section
-    .separator-illustration
+    .separator-illustration{"data-zs-overlay" => "dots", "data-zs-speed" => 20000, "data-zs-src" => "[\"images/illustration/2.jpg\", \"images/illustration/3.jpg\", \"images/illustration/6.jpg\"]"}
+      .separator-illustration__shadow
 
 
   .container
@@ -275,6 +282,7 @@
               %h3
                 WHITE VISIONS PHOTOGRAPHY 
                 %br/
+                %br/
                 DÉVAI ÁKOS
                   
               
@@ -296,5 +304,7 @@
                     %i.fa.fa-facebook
                     www.facebook.com/whitevisionsphotography
               .fb-like{"data-action" => "like", "data-href" => "https://developers.facebook.com/docs/plugins/", "data-layout" => "button_count", "data-share" => "false", "data-show-faces" => "true"}
-
+            .copyright
+              %p
+                Copyright © 2015 
 
