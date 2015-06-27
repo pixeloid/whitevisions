@@ -1,6 +1,6 @@
 .panel-collapse{
 
-	
+
 	img{
 		@extend .img-responsive;
 		display: block;
@@ -63,10 +63,13 @@
 				color: $gray-base;
 			}
 
-			img{
-				@extend .img-responsive;
-			}
 		}
+
+
+		img{
+			@extend .img-responsive;
+		}
+
 	}
 	.sticky-outer{
 		position: static;
