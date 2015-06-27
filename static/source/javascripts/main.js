@@ -112,11 +112,9 @@
 
 	    })
 
-	    $('#info-eskuvo').tabCollapse();
-	    $('#info-beauty').tabCollapse();
+	    // $('#info-eskuvo').tabCollapse();
+	    // $('#info-beauty').tabCollapse();
 
-	    $('#info-eskuvo .nav-list a').first().tab('show');
-	    $('#info-beauty .nav-list a').first().tab('show');
 
 	    if( viewport.is('>xs') ) {
 
@@ -140,6 +138,8 @@
 
 	    }
 
+	    $('#info-eskuvo .nav-list a').first().tab('show');
+	    $('#info-beauty .nav-list a').first().tab('show');
 
 	    $(document.body).trigger("sticky_kit:recalc");
 
