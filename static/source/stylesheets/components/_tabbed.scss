@@ -1,3 +1,16 @@
+.panel-collapse{
+
+	
+	img{
+		@extend .img-responsive;
+		display: block;
+		@media (min-width: $screen-sm-min) { 
+			display: none;
+		}
+	}
+
+}
+
 .tabbed{
 
 	h3{
@@ -18,10 +31,15 @@
 		}
 
 		img{
-			display: none;
+			@extend .img-responsive;
+			display: block;
+			@media (min-width: $screen-sm-min) { 
+				display: none;
+			}
 		}
 
 	}
+
 
 	.nav-list{
 		margin-bottom: 50px;

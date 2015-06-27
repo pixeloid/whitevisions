@@ -1,18 +1,20 @@
-//= require "modernizr.custom.27778"
+//= require "_modernizr.custom.27778"
+//= require "jquery"
 //= require "swiper"
 //= require "bootstrap"
 //= require "bootstrap-tabcollapse"
-//= require "jquery.sticky-kit"
-//= require "jquery.zoomslider"
+//= require "_jquery.sticky-kit"
+//= require "_jquery.zoomslider"
 //= require "floatlabel.js/floatlabels.js"
 //= require "bootstrap-datepicker"
 //= require "iCheck"
-//= require "picturefill.min.js"
+//= require "_picturefill.min.js"
+//= require "responsive-toolkit"
 
 !function(a){a.fn.datepicker.dates.hu={days:["Vasárnap","Hétfő","Kedd","Szerda","Csütörtök","Péntek","Szombat","Vasárnap"],daysShort:["Vas","Hét","Ked","Sze","Csü","Pén","Szo","Vas"],daysMin:["Va","Hé","Ke","Sz","Cs","Pé","Sz","Va"],months:["Január","Február","Március","Április","Május","Június","Július","Augusztus","Szeptember","Október","November","December"],monthsShort:["Jan","Feb","Már","Ápr","Máj","Jún","Júl","Aug","Sze","Okt","Nov","Dec"],today:"Ma",weekStart:1,format:"yyyy.mm.dd"}}(jQuery);
 
 
-+function ($) {
++function ($, viewport) {
 
 		var swiper1 = new Swiper('#gallery-eskuvo .swiper-container', {
 			nextButton: '#gallery-eskuvo .swiper-button-next',
@@ -75,8 +77,6 @@
 
 	    $('#top-nav .nav > li').eq(Math.floor($('#top-nav .nav > li').length / 2) - 1).addClass('center');
 
-
-
 	    $('.navbar-fixed-top a').click(function(event) {
 	        var $anchor = $(this);
 	        if($($anchor.attr('href')).length){
@@ -101,33 +101,44 @@
 
 
 
-	    $('#info-eskuvo').tabCollapse();
-	    $('#info-beauty').tabCollapse();
-	    $('#info-eskuvo nav-list a').first().click('show');
-	    $('#info-beauty nav-list a').first().click('show');
 
 	    $(document).on("shown.bs.collapse shown.bs.tab", ".panel-collapse, a[data-toggle='tab']", function(el){
 	    	
 	    	var $this = $(this);
-	    	
+
 	    	$('html, body').stop().animate({
 	    	    scrollTop: $($this.attr('href')).offset().top - 145
 	    	}, 1);
 
-	    	$(this).closest('aside').find('img').attr('src', $($(this).attr('href')).find('img').attr('src'));
-
-	    	$(document.body).trigger("sticky_kit:recalc");
-
-
 	    })
 
+	    $('#info-eskuvo').tabCollapse();
+	    $('#info-beauty').tabCollapse();
 
-    	$("[data-sticky_column]").stick_in_parent({
-      		parent: "[data-sticky_parent]",
-      		offset_top: 50,
-      		recalc_every: 1
-	    })
-	    
+	    $('#info-eskuvo .nav-list a').first().tab('show');
+	    $('#info-beauty .nav-list a').first().tab('show');
+
+	    if( viewport.is('>xs') ) {
+
+        	$("[data-sticky_column]").stick_in_parent({
+          		parent: "[data-sticky_parent]",
+          		offset_top: 50,
+          		recalc_every: 1
+    	    })
+    	    
+    	    $(document).on("shown.bs.collapse shown.bs.tab", ".panel-collapse, a[data-toggle='tab']", function(el){
+    	    	
+    	    	var $this = $(this);
+
+    	    	$(this).closest('aside').find('img').attr('src', $($(this).attr('href')).find('img').attr('src'));
+
+    	    	$(document.body).trigger("sticky_kit:recalc");
+
+
+    	    })
+
+
+	    }
 
 
 	    $(document.body).trigger("sticky_kit:recalc");
@@ -178,6 +189,6 @@
 	})
 
 
-}(jQuery);
+}(jQuery, ResponsiveBootstrapToolkit);
 
 

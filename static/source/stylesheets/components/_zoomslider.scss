@@ -24,6 +24,7 @@ $color-bullet-active: $brand-primary;
 			.zs-slide {
 				background: transparent none no-repeat 50% 50%;
 		        background-size: cover;
+		        background-attachment: fixed;
 		        position: absolute;
 		        visibility: hidden;
 		        opacity: 0;
