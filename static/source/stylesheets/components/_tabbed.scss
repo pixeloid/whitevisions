@@ -66,10 +66,7 @@
 		}
 
 
-		img{
-			@extend .img-responsive;
-		}
-
+	
 	}
 	.sticky-outer{
 		position: static;
@@ -88,6 +85,9 @@
 
 		}
 
+		img{
+			@extend .img-responsive;
+		}
 
 	}
 
