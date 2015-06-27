@@ -11,7 +11,7 @@ add_action('print_media_templates', function(){
     <label class="setting">
       <span><?php _e('Tipus'); ?></span>
       <select data-setting="type">
-        <option value="swiper" selected="selected"> Carousel </option>
+        <option value="carousel" selected="selected"> Carousel </option>
         <option value="separator"> Elválasztó </option>
       </select>
     </label>
@@ -24,7 +24,7 @@ add_action('print_media_templates', function(){
       // add your shortcode attribute and its default value to the
       // gallery settings list; $.extend should work as well...
       _.extend(wp.media.gallery.defaults, {
-        type: 'swiper'
+        type: 'carousel'
       });
 
       // merge default gallery settings template with yours
@@ -81,10 +81,10 @@ function swiper_gallery($output, $attr) {
         }
     }
 
-    if (empty($attachments) || !isset($attr['type'])) return '';
+    if (empty($attachments) || !isset($attr['type'])) $attr['type'] = 'carousel';
 
     switch ($attr['type']) {
-        case 'swiper':
+        case 'carousel':
                 // Here's your actual output, you may customize it to your need
                 $output = "<div class='swiper-container'>\n";
                 $output .= "<div class='swiper-wrapper'>\n";

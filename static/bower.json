@@ -39,6 +39,7 @@
     "bootstrap-tabcollapse": "~0.2.6",
     "iCheck": "1.0.2",
     "floatlabel.js": "master",
-    "bootstrap-datepicker": "~1.4.0"
+    "bootstrap-datepicker": "~1.4.0",
+    "swiper": "~3.0.8"
   }
 }
