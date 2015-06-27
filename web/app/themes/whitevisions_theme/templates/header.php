@@ -21,7 +21,13 @@
         <span class='icon-bar'></span>
       </button>
       <a class='navbar-brand' href='#'>
-        <img alt='<?php bloginfo('name'); ?>' title='<?php bloginfo('name'); ?>' src='<?php echo get_template_directory_uri(); ?>/dist/images/white_visions_logo.svg'>
+      <?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+          <div class='site-logo'>
+          <img alt='<?php bloginfo('name'); ?>' title='<?php bloginfo('name'); ?>' src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>'>
+          </div>
+      <?php endif; ?>
+
+
       </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->

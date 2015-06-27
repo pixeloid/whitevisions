@@ -36,6 +36,13 @@
                   </ul>
                   <div class='fb-like' data-action='like' data-href='http://www.facebook.com/whitevisionsphotography' data-layout='button_count' data-share='false' data-show-faces='true'></div>
                 </div>
+
+                <div class='copyright'>
+                  <p>
+                    Copyright © 2015
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>

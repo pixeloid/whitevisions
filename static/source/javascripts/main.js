@@ -99,11 +99,17 @@
 	        $('.navbar-toggle:visible').click();
 	    });
 
-	    $('#info-eskuvo .nav-list').tabCollapse().find('a').first().click();
-	    $('#info-beauty .nav-list').tabCollapse().find('a').first().click();
+
+
+	    $('#info-eskuvo').tabCollapse();
+	    $('#info-beauty').tabCollapse();
+	    $('#info-eskuvo nav-list a').first().click('show');
+	    $('#info-beauty nav-list a').first().click('show');
 
 	    $(document).on("shown.bs.collapse shown.bs.tab", ".panel-collapse, a[data-toggle='tab']", function(el){
+	    	
 	    	var $this = $(this);
+	    	
 	    	$('html, body').stop().animate({
 	    	    scrollTop: $($this.attr('href')).offset().top - 145
 	    	}, 1);
