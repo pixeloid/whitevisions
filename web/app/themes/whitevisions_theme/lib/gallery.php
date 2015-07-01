@@ -119,7 +119,7 @@ function swiper_gallery($output, $attr) {
                 $output = '';
                 $images = array();
                 foreach ($attachments as $id => $attachment) {   
-                    $img = wp_get_attachment_image_src($id, 'large');                 
+                    $img = wp_get_attachment_image_src($id, 'orig');                 
                     $images[] = "\"{$img[0]}\"";
                 }
 
