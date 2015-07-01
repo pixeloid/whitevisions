@@ -110,7 +110,8 @@ function swiper_gallery($output, $attr) {
                 $output .= "</div>\n";
                 $output .= "          <div class='swiper-pagination'></div>
                       <div class='swiper-button-next'></div>
-                      <div class='swiper-button-prev'></div>";
+                      <div class='swiper-button-prev'></div>
+                                <div class='swiper-shadow'></div>";
                 $output .= "</div>\n";
 
             break;
