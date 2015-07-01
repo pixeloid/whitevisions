@@ -112,8 +112,8 @@
 
 	    })
 
-	    // $('#info-eskuvo').tabCollapse();
-	    // $('#info-beauty').tabCollapse();
+	    $('#info-eskuvo').tabCollapse();
+	    $('#info-beauty').tabCollapse();
 
 
 	    if( viewport.is('>xs') ) {
