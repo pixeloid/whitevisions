@@ -138,6 +138,9 @@
 
 	    }
 
+
+
+
 	    $('#info-eskuvo .nav-list a').first().tab('show');
 	    $('#info-beauty .nav-list a').first().tab('show');
 
