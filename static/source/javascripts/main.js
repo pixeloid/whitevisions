@@ -123,6 +123,11 @@
           		offset_top: 50,
           		recalc_every: 1
     	    })
+
+    	    $('.nav-list li.active a').each(function(){
+    	    	$(this).closest('aside').find('img').attr('src', $($(this).attr('href')).find('img').attr('src'));
+    	    })
+
     	    
     	    $(document).on("shown.bs.collapse shown.bs.tab", ".panel-collapse, a[data-toggle='tab']", function(el){
     	    	
@@ -139,10 +144,8 @@
 	    }
 
 
-
-
-	    $('#info-eskuvo .nav-list a').first().tab('show');
-	    $('#info-beauty .nav-list a').first().tab('show');
+	    // $('#info-eskuvo .nav-list a').first().tab('show');
+	    // $('#info-beauty .nav-list a').first().tab('show');
 
 	    $(document.body).trigger("sticky_kit:recalc");
 
