@@ -1,14 +1,15 @@
+ruby '2.1.1'
 source 'http://rubygems.org'
 
-gem "middleman"
+gem "middleman", "= 3.3.12"
 
-# Live-reloading plugin
+# # Live-reloading plugin
 gem "middleman-livereload"
-
+#gem "middleman-compass"
+#gem "middleman-compass"
 gem 'haml'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
 gem 'middleman-deploy', '~> 1.0'
 gem 'font-awesome-sass', '~> 4.3.0'
-gem "middleman-compass"

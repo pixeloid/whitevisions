@@ -44,7 +44,9 @@
 
 	$(document).ready(function () {
 
-		$('#home').css({'height':($(window).height())+'px'});
+		$('#home').css({'height':($(window).height())+'px'}).insertBefore('.wrapper');
+		$('.wrapper').css({'margin-top':($(window).height())+'px'});
+
 		$('.swiper-slide img').height($(window).height()-150);
 
 		$(window).resize(function(){

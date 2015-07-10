@@ -5,5 +5,5 @@
 
 
 
-<div data-zs-overlay='dots' data-zs-speed='40000' data-zs-src='["<?php echo $image[0]; ?>"]' id='home'></div>
+<div style='background-image: url(<?php echo $image[0]; ?>);' id='home'></div>
 

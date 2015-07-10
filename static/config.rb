@@ -53,7 +53,6 @@ set :file_watcher_ignore, [
 
 activate :livereload
 
-activate :compass
 
 # activate :relative_assets
 # Methods defined in the helpers block are available in templates
