@@ -3,6 +3,7 @@
 
 
 @import "bootstrap-sprockets";
+@import "bootstrap-datepicker";
 @import "fonts";
 @import "variables";
 @import "bootstrap";
@@ -148,6 +149,11 @@ body{
 }
 
 #contact-form{
+	position: relative;
+	.datepicker-dropdown{
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
 	form{
 		text-align: left;
 		margin-top: 50px;
@@ -180,7 +186,14 @@ body{
 				color: $gray-light !important;
 			}
 		}
+		
+		button{
+			margin-top: 20px;
+			@media (min-width: $screen-sm-min) { 
+				margin-top: 0;
+			}
 
+		}
 		textarea{
 			height: 161px;
 		}

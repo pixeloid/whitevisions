@@ -80,10 +80,15 @@
 	    $('#top-nav .nav > li').eq(Math.floor($('#top-nav .nav > li').length / 2) - 1).addClass('center');
 
 	    $('.navbar-fixed-top a').click(function(event) {
+	    	event.preventDefault();
 	        var $anchor = $(this);
-	        if($($anchor.attr('href')).length){
+	        var $target = $($anchor.attr('href'));
+	        if($target.length){
+
+	        	$target = ($($anchor.attr('href')).attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $($anchor.attr('href')).parent() : $($anchor.attr('href'));
+
 	        	$('html, body').stop().animate({
-	        	    scrollTop: $($anchor.attr('href')).offset().top - 70
+	        	    scrollTop: $target.offset().top - 70
 	        	}, 400);
 	        }
 
@@ -107,12 +112,16 @@
 	    $(document).on("shown.bs.collapse shown.bs.tab", ".panel-collapse, a[data-toggle='tab']", function(el){
 	    	
 	    	var $this = $(this);
+	    	
+	    	var $targetEl = $this.attr('href') ? $($this.attr('href')) : $this; 
+
 
 	    	$('html, body').stop().animate({
-	    	    scrollTop: $($this.attr('href')).offset().top - 145
-	    	}, 1);
+	    	    scrollTop: $targetEl.offset().top - 145
+	    	}, 400);
 
 	    })
+
 
 	    $('#info-eskuvo').tabCollapse();
 	    $('#info-beauty').tabCollapse();
@@ -142,6 +151,11 @@
 
     	    })
 
+    	    $('.datepicker').datepicker({
+    	    	language: "hu",
+    	    	container: "#contact-form"
+    	    })
+
 
 	    }
 
@@ -162,9 +176,6 @@
 			paddingOffset: 0
 	    });
 
-	    $('.datepicker').datepicker({
-	    	language: "hu"
-	    })
 
 	    $('input').iCheck({
 	      checkboxClass: 'icheckbox_square-blue',
@@ -195,7 +206,6 @@
 		else 
 			$('#top-nav').removeClass('inverse');
 
-		$('#home .zs-slides').css('-webkit-transform', 'translate3d(0px, '+ (-this.scrollY/4) +'px, 0)')
 	})
 
 
