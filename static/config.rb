@@ -36,21 +36,24 @@
 # # activate :automatic_image_sizes
 
 # # Reload the browser automatically whenever files change
-# set :file_watcher_ignore, [
-#     /^\.idea\//,
-#     /^\.bundle\//,
-#     /^\.sass-cache\//,
-#     /^\.git\//,
-#     /^\.gitignore$/,
-#     /\.DS_Store/,
-#     /^build\//,
-#     /^\.rbenv-.*$/,
-#     /^Gemfile$/,
-#     /^Gemfile\.lock$/,
-#     /~$/,
-#     /(^|\/)\.?#/
-# ]
+set :file_watcher_ignore, [
+    /^\.idea\//,
+    /^\.bundle\//,
+    /^\.sass-cache\//,
+    /^\.git\//,
+    /^\.gitignore$/,
+    /\.DS_Store/,
+    /^build\//,
+    /^\.rbenv-.*$/,
+    /^Gemfile$/,
+    /^Gemfile\.lock$/,
+    /~$/,
+    /(^|\/)\.?#/
+]
+
 activate :livereload
+
+activate :compass
 
 # activate :relative_assets
 # Methods defined in the helpers block are available in templates

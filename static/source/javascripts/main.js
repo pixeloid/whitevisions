@@ -191,7 +191,9 @@
 		if(this.scrollY > $(window).height()) 
 			$('#top-nav').addClass('inverse') 
 		else 
-			$('#top-nav').removeClass('inverse')
+			$('#top-nav').removeClass('inverse');
+
+		$('#home .zs-slides').css('-webkit-transform', 'translate3d(0px, '+ (-this.scrollY/4) +'px, 0)')
 	})
 
 
