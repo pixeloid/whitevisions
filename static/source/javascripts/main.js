@@ -186,12 +186,15 @@
 	});
 
 
-
+	
+	$('#home, .wrapper').hide();
 
 
 	$(window).load(function() {
 
-		
+			$('#home, .wrapper').fadeIn();
+			$('.la-ball-clip-rotate').hide();
+
 		swiper1.update();
 		swiper2.update();
 
