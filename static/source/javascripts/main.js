@@ -77,6 +77,12 @@
 		})
 
 
+	    $('#info-eskuvo').tabCollapse();
+	    $('#info-beauty').tabCollapse();
+
+
+
+
 	    $('#top-nav .nav > li').eq(Math.floor($('#top-nav .nav > li').length / 2) - 1).addClass('center');
 
 	    $('.navbar-fixed-top a').click(function(event) {
@@ -123,8 +129,6 @@
 	    })
 
 
-
-
 	    if( viewport.is('>xs') ) {
 
 
@@ -152,8 +156,6 @@
 
 	    }
 
-	    $('#info-eskuvo').tabCollapse();
-	    $('#info-beauty').tabCollapse();
 
 
 	    // $('#info-eskuvo .nav-list a').first().tab('show');
