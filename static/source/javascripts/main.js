@@ -16,33 +16,41 @@
 
 +function ($, viewport) {
 
-		var swiper1 = new Swiper('#gallery-eskuvo .swiper-container', {
+
+	$(document).ready(function () {
+
+		$('#home, .wrapper').hide();
+
+		var swiper1;
+		var swiper2;
+
+
+		var swiperConfig = {
 			nextButton: '#gallery-eskuvo .swiper-button-next',
 			prevButton: '#gallery-eskuvo .swiper-button-prev',
 			slidesPerView: 'auto',
 			centeredSlides: true,
 			paginationClickable: true,
 	        spaceBetween: 1,
-	        autoplay: viewport.is('>xs') ? 2500 : false,
 	        preloadImages: true,
-	        autoplayDisableOnInteraction: false,
+	        autoplayDisableOnInteraction: false
+		};
 
-		});
+		if(viewport.is('>xs')){
+			swiperConfig.autoplay = 2500;	
+		}
 
-		var swiper2 = new Swiper('#gallery-beauty .swiper-container', {
-			nextButton: '#gallery-beauty .swiper-button-next',
-			prevButton: '#gallery-beauty .swiper-button-prev',
-			slidesPerView: 'auto',
-			centeredSlides: true,
-			paginationClickable: true,
-	        spaceBetween: 1,
-	        autoplay: viewport.is('>xs') ? 2500 : false,
-	        preloadImages: true,
-	      	autoplayDisableOnInteraction: false,
+		swiper1 = new Swiper('#gallery-eskuvo .swiper-container', swiperConfig);
 
-		});
+		swiperConfig.nextButton = '#gallery-beauty .swiper-button-next';
+		swiperConfig.prevButton = '#gallery-beauty .swiper-button-prev';
 
-	$(document).ready(function () {
+		swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
+
+
+
+
+
 
 		$('#home').css({'height':($(window).height())+'px'}).insertBefore('.wrapper');
 		$('.wrapper').css({'margin-top':($(window).height())+'px'});
@@ -50,6 +58,9 @@
 		$('.swiper-slide img').height($(window).height()-150);
 
 		$(window).resize(function(){
+
+			if( viewport.is('<=xs') ) return false;
+
 			$('#home').css({'height':($(window).height())+'px'});
 			$('.swiper-slide img').height($(window).height()-150);
 
@@ -123,7 +134,7 @@
 
 
 	    	$('html, body').stop().animate({
-	    	    scrollTop: $targetEl.offset().top - 145
+	    	    scrollTop: $targetEl.offset().top - (viewport.is('<=xs') ? 120 : 145)
 	    	}, 400);
 
 	    })
@@ -181,42 +192,44 @@
 	      increaseArea: '20%' // optional
 	    });
 
+
+
+
+
+	    $(window).load(function() {
+
+	    	$('#home, .wrapper').fadeIn();
+	    	$('.la-ball-clip-rotate').hide();
+
+	    	if( viewport.is('>xs') ) {
+
+	    		$("[data-sticky_column]").stick_in_parent({
+	    				parent: "[data-sticky_parent]",
+	    				offset_top: 50,
+	    				recalc_every: 1
+	    		})
+	    	}
+
+	    	swiper1.update();
+	    	swiper2.update();
+
+
+
+	    });
+
+
+	    $(window).scroll(function(){
+	    	if(this.scrollY > $(window).height()) 
+	    		$('#top-nav').addClass('inverse') 
+	    	else 
+	    		$('#top-nav').removeClass('inverse');
+
+	    })
+
 	});
 
 
 	
-	$('#home, .wrapper').hide();
-
-
-	$(window).load(function() {
-
-		$('#home, .wrapper').fadeIn();
-		$('.la-ball-clip-rotate').hide();
-
-		if( viewport.is('>xs') ) {
-
-			$("[data-sticky_column]").stick_in_parent({
-					parent: "[data-sticky_parent]",
-					offset_top: 50,
-					recalc_every: 1
-			})
-		}
-
-		swiper1.update();
-		swiper2.update();
-
-
-
-	});
-
-
-	$(window).scroll(function(){
-		if(this.scrollY > $(window).height()) 
-			$('#top-nav').addClass('inverse') 
-		else 
-			$('#top-nav').removeClass('inverse');
-
-	})
 
 
 }(jQuery, ResponsiveBootstrapToolkit);
