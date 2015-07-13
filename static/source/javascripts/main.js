@@ -23,7 +23,7 @@
 			centeredSlides: true,
 			paginationClickable: true,
 	        spaceBetween: 1,
-	        autoplay: 2500,
+	        autoplay: viewport.is('>xs') ? 2500 : false,
 	        preloadImages: true,
 	        autoplayDisableOnInteraction: false,
 
@@ -36,7 +36,7 @@
 			centeredSlides: true,
 			paginationClickable: true,
 	        spaceBetween: 1,
-	        autoplay: 2500,
+	        autoplay: viewport.is('>xs') ? 2500 : false,
 	        preloadImages: true,
 	      	autoplayDisableOnInteraction: false,
 
