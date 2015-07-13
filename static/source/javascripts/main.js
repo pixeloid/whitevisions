@@ -66,7 +66,8 @@
 	        			centeredSlides: true,
 	        			paginationClickable: true,
 	        	        spaceBetween: 1,
-	        	        preloadImages: true,
+	        	        preloadImages: false,
+	        	        lazyLoading: true,
 	        	        autoplayDisableOnInteraction: false
 	        		};
 
