@@ -5,5 +5,5 @@
 
 
 
-<div style='background-image: url(<?php echo $image[0]; ?>);' id='home'></div>
+<div style='background-image: url(<?php echo $image[0]; ?>); display: none;' id='home'></div>
 

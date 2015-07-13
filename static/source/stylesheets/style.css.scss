@@ -59,6 +59,7 @@
   left: 0;
   background-size: cover;
   background-position: 50% 50%;
+  display: none;
   @include transform( scale(1.1) );
 	@include box-shadow(inset 0 0px 6px rgba(0,8,0,.5));
 	@include animation( bounce 53s ease-in-out 3s infinite);
@@ -109,6 +110,7 @@ section{
 	background: url(../images/retina_dust.png);
 	position: relative;
 	z-index: 100;
+	display: none;
 }
 
 

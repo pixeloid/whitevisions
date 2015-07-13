@@ -23,7 +23,7 @@ use Roots\Sage\Wrapper;
       <div></div>
     </div>
 
-    <div class="wrapper" role="document">
+    <div class="wrapper" role="document" style="display: none;">
         <main class="main" role="main">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
