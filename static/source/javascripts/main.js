@@ -123,17 +123,10 @@
 	    })
 
 
-	    $('#info-eskuvo').tabCollapse();
-	    $('#info-beauty').tabCollapse();
 
 
 	    if( viewport.is('>xs') ) {
 
-        	$("[data-sticky_column]").stick_in_parent({
-          		parent: "[data-sticky_parent]",
-          		offset_top: 50,
-          		recalc_every: 1
-    	    })
 
     	    $('.nav-list li.active a').each(function(){
     	    	$(this).closest('aside').find('img').attr('src', $($(this).attr('href')).find('img').attr('src'));
@@ -158,6 +151,9 @@
 
 
 	    }
+
+	    $('#info-eskuvo').tabCollapse();
+	    $('#info-beauty').tabCollapse();
 
 
 	    // $('#info-eskuvo .nav-list a').first().tab('show');
@@ -192,8 +188,17 @@
 
 	$(window).load(function() {
 
-			$('#home, .wrapper').fadeIn();
-			$('.la-ball-clip-rotate').hide();
+		$('#home, .wrapper').fadeIn();
+		$('.la-ball-clip-rotate').hide();
+
+		if( viewport.is('>xs') ) {
+
+			$("[data-sticky_column]").stick_in_parent({
+					parent: "[data-sticky_parent]",
+					offset_top: 50,
+					recalc_every: 1
+			})
+		}
 
 		swiper1.update();
 		swiper2.update();
