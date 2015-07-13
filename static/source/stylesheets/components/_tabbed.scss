@@ -14,6 +14,10 @@
 .panel-group.visible-xs{
 	margin-top: 40px;
 	text-align: center;
+
+	.panel-title a:hover{
+		text-decoration: none;
+	}
 	.panel-body{
 		h3{
 			display: none;

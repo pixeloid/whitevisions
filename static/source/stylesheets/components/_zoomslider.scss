@@ -20,15 +20,18 @@ $color-bullet-active: $brand-primary;
 		overflow: hidden;
 	}
 	.zs-slideshow {
+			overflow: hidden;
+			position: relative;
 		.zs-slides {
-
+			overflow: hidden;
 			.zs-slide {
 				background: transparent none no-repeat 50% 50%;
 		        background-size: cover;
 		       // background-attachment: fixed;
-		        position: fixed;
+		        position: absolute;
 		        visibility: hidden;
 		        opacity: 0;
+		        z-index: 0;
 		        @include scale(1.2, 1.2);
 		        &.active {
 		        	visibility: visible;
