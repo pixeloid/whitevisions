@@ -35,6 +35,13 @@
 	            this.initNavigation();
 	            this.initSeparator();
 	            this.initSticky();
+
+
+            	$(window).load(function() {
+            		APP.swiper1.update();
+            		APP.swiper2.update();
+    			});
+
 	        },
 
 	        initHomeScreen: function(){
@@ -220,6 +227,7 @@
 	        	$(window).load(function() {
 		        	$('#info-eskuvo').tabCollapse();
 		        	$('#info-beauty').tabCollapse();
+
 				});
 
 
