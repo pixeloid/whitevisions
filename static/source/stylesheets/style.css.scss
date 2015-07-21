@@ -62,7 +62,7 @@
   display: none;
   @include transform( scale(1.1) );
 	@include box-shadow(inset 0 0px 6px rgba(0,8,0,.5));
-	@include animation( bounce 53s ease-in-out 3s infinite);
+	@include animation( bounce 53s  3s infinite);
 
 }
 
