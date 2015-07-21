@@ -1,14 +1,22 @@
-<div id='fb-root'>
-  <script>
-    (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v2.3&appId=150380485030436";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-  </script>
-</div>
+<script>
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1196542630371212',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 <nav class='navbar navbar-default navbar-fixed-top' id='top-nav'>
   <div class='container'>
