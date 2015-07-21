@@ -40,6 +40,9 @@
             	$(window).load(function() {
             		APP.swiper1.update();
             		APP.swiper2.update();
+            		APP.swiper1.startAutoplay();
+            		APP.swiper2.startAutoplay();
+
     			});
 
 	        },
