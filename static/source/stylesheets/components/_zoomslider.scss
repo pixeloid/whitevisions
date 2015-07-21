@@ -31,7 +31,7 @@ $color-bullet-active: $brand-primary;
 		        visibility: hidden;
 		        opacity: 0;
 		        z-index: 0;
-		        @include scale(1.1, 1.1);
+		        @include scale(1.2, 1.2);
 
 		        @media (min-width: $screen-sm-min) { 
 		        	background-attachment: fixed;
