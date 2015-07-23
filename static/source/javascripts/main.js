@@ -109,7 +109,8 @@
 
 	        	    $('.datepicker').datepicker({
 	        	    	language: "hu",
-	        	    	container: "#contact-form"
+	        	    	container: "#contact-form",
+	        	    	format: "yyyy-mm-dd"
 	        	    })
 
 
