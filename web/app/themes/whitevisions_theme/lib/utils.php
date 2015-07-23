@@ -35,3 +35,14 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+
+add_action( 'after_setup_theme', 'add_image_sizes' );
+
+function add_image_sizes() {
+    add_image_size ( 'separator', 1600, null );
+    add_image_size ( 'gallery', null, 750 );
+}
+
+
+
+

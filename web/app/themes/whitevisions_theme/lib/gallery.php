@@ -94,7 +94,7 @@ function swiper_gallery($output, $attr) {
                     // Fetch the thumbnail (or full image, it's up to you)
             //      $img = wp_get_attachment_image_src($id, 'medium');
             //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
-                    $img_l = wp_get_attachment_image_src($id, 'large');
+                    $img_l = wp_get_attachment_image_src($id, 'gallery');
                     $img_s = wp_get_attachment_image_src($id, 'medium');
 
                     $output .= "<div class='swiper-slide'>\n";
@@ -120,7 +120,7 @@ function swiper_gallery($output, $attr) {
                 $output = '';
                 $images = array();
                 foreach ($attachments as $id => $attachment) {   
-                    $img = wp_get_attachment_image_src($id, 'orig');                 
+                    $img = wp_get_attachment_image_src($id, 'separator');                 
                     $images[] = "\"{$img[0]}\"";
                 }
 
