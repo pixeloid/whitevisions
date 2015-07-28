@@ -135,7 +135,7 @@
 	        	    	$target = ($($anchor.attr('href')).attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $($anchor.attr('href')).parent() : $($anchor.attr('href'));
 
 	        	    	$('html, body').stop().animate({
-	        	    	    scrollTop: $target.offset().top - 70
+	        	    	    scrollTop: ( ($target.attr('id') == 'home') ? 0 : $target.offset().top) - 70
 	        	    	}, 400);
 	        	    }
 
@@ -283,10 +283,12 @@
 	});
 
 	$(window).load(function() {
-		APP.swiper1.update();
-		APP.swiper2.update();
-		APP.swiper1.startAutoplay();
-		APP.swiper2.startAutoplay();
+		// APP.swiper1.update();
+		// APP.swiper2.update();
+		// APP.swiper1.startAutoplay();
+		// APP.swiper2.startAutoplay();
+
+		$('.swiper-button-next').click();
 
 	});
 

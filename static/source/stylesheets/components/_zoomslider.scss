@@ -26,15 +26,15 @@ $color-bullet-active: $brand-primary;
 			overflow: hidden;
 			.zs-slide {
 				background: transparent none no-repeat 50% 50%;
-		        background-size: cover;
+		        background-size: 100% auto;
 		        position: absolute;
 		        visibility: hidden;
 		        opacity: 0;
 		        z-index: 0;
 		        @include scale(1.2, 1.2);
 
-		        @media (min-width: $screen-sm-min) { 
 		        	background-attachment: fixed;
+		        @media (min-width: $screen-sm-min) { 
 		        }
 
 		        &.active {
