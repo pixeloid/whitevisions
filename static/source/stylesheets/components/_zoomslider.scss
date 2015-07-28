@@ -24,11 +24,18 @@ $color-bullet-active: $brand-primary;
 			position: relative;
 		.zs-slides {
 			overflow: hidden;
+			position: relative;
 			.zs-slide {
 				background: transparent none no-repeat 50% 50%;
 		        background-size: 100% auto;
 		        position: absolute;
 		        visibility: hidden;
+		        transform: translateZ(0);
+		        -moz-transform: translatez(0);
+		        -ms-transform: translatez(0);
+		        -o-transform: translatez(0);
+		        -webkit-transform: translateZ(0);
+
 		        opacity: 0;
 		        z-index: 0;
 		        @include scale(1.2, 1.2);

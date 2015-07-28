@@ -88,6 +88,8 @@
 
 	        		APP.swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
 
+	        		$('.swiper-button-next').click();
+
 
 	        },
 
@@ -105,16 +107,13 @@
         	      increaseArea: '20%' // optional
         	    });
 
-	    	    if( viewport.is('>xs') ) {
-
-	        	    $('.datepicker').datepicker({
-	        	    	language: "hu",
-	        	    	container: "#contact-form",
-	        	    	format: "yyyy-mm-dd"
-	        	    })
-
-
-	    	    }
+        	    if(!Modernizr.inputtypes.date) {
+        	    	$('.datepicker').datepicker({
+        	    		language: "hu",
+        	    		container: "#contact-form",
+        	    		format: "yyyy-mm-dd"
+        	    	})
+        	    }
 
 
 	        },
@@ -280,6 +279,7 @@
 
 	$(function () {
 	    APP.init();
+
 	});
 
 	$(window).load(function() {
@@ -288,7 +288,6 @@
 		// APP.swiper1.startAutoplay();
 		// APP.swiper2.startAutoplay();
 
-		$('.swiper-button-next').click();
 
 	});
 
