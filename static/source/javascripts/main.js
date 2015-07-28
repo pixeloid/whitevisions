@@ -88,7 +88,6 @@
 
 	        		APP.swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
 
-	        		$('.swiper-button-next').click();
 
 
 	        },
@@ -280,13 +279,16 @@
 	$(function () {
 	    APP.init();
 
-	});
+	    $(window).load(function() {
+	    	// APP.swiper1.update();
+	    	// APP.swiper2.update();
+	    	// APP.swiper1.startAutoplay();
+	    	// APP.swiper2.startAutoplay();
 
-	$(window).load(function() {
-		// APP.swiper1.update();
-		// APP.swiper2.update();
-		// APP.swiper1.startAutoplay();
-		// APP.swiper2.startAutoplay();
+	    	$('.swiper-button-next').click();
+
+	    });
+
 
 
 	});
