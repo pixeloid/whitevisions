@@ -41,7 +41,7 @@
     "wpackagist-plugin/contact-form-7": "4.2.1",
     "wpackagist-plugin/bootstrap-for-contact-form-7": "dev-trunk",
     "wpackagist-plugin/really-simple-captcha": "1.8.0.1",
-    "wpackagist-plugin/force-regenerate-thumbnails": "2.0.5"
+    "wpackagist-plugin/regenerate-thumbnails": "dev-trunk"
   },
   "extra": {
     "installer-paths": {

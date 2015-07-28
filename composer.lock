@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "39fa502c0415921d94b2f91e05f60d7c",
+    "hash": "292a97fd6a3344ee7f69bf518be3a158",
     "packages": [
         {
             "name": "composer/installers",
@@ -279,26 +279,6 @@
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
-            "name": "wpackagist-plugin/force-regenerate-thumbnails",
-            "version": "2.0.5",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/force-regenerate-thumbnails/",
-                "reference": "tags/2.0.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/force-regenerate-thumbnails.2.0.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
-        },
-        {
             "name": "wpackagist-plugin/really-simple-captcha",
             "version": "1.8.0.1",
             "source": {
@@ -317,6 +297,27 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/really-simple-captcha/"
+        },
+        {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/",
+            "time": "2015-04-23 22:02:14"
         },
         {
             "name": "wpackagist-plugin/types",
@@ -343,7 +344,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wpackagist-plugin/bootstrap-for-contact-form-7": 20
+        "wpackagist-plugin/bootstrap-for-contact-form-7": 20,
+        "wpackagist-plugin/regenerate-thumbnails": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
