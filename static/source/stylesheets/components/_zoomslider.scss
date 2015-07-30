@@ -2,15 +2,14 @@
 
 $padding-xs: 10px;
 $padding-sm: 20px;
-$color-bullet-normal: transparent;
-$color-bullet-active: $brand-primary;
+$color-bullet-normal: #4a4a4a;
+$color-bullet-active: #cccccc;
 
 .zs-enabled {
 	position: relative;
 	.zs-slideshow,
 	.zs-slides,
 	.zs-slide {
-		
 		position: absolute;
 		z-index: 1;
 		top: 0;
@@ -20,28 +19,23 @@ $color-bullet-active: $brand-primary;
 		overflow: hidden;
 	}
 	.zs-slideshow {
-			overflow: hidden;
-			position: relative;
 		.zs-slides {
-			overflow: hidden;
-			position: relative;
 			.zs-slide {
 				background: transparent none no-repeat 50% 50%;
-		        background-size: 100% auto;
+		        background-size: cover;
 		        position: absolute;
 		        visibility: hidden;
-		        transform: translateZ(0);
-		        -moz-transform: translatez(0);
-		        -ms-transform: translatez(0);
-		        -o-transform: translatez(0);
-		        -webkit-transform: translateZ(0);
-
 		        opacity: 0;
-		        z-index: 0;
+		        background-attachment: scroll;
+
+		        .opera &, .chrome &{
+		        	background-attachment: scroll;
+		        }
 		        @include scale(1.2, 1.2);
 
-		        	background-attachment: fixed;
+
 		        @media (min-width: $screen-sm-min) { 
+		        	background-attachment: fixed;
 		        }
 
 		        &.active {
@@ -57,14 +51,13 @@ $color-bullet-active: $brand-primary;
 			left: 0;
 			width: 100%;
 			text-align: center;
-			display: none;
 			.zs-bullet {
 				display: inline-block;
 				cursor: pointer;
-				border: 1px solid #fff;
-				width: 10px;
-				height: 10px;
-				border-radius: (12px / 2);
+				border: 2px solid $color-bullet-active;
+				width: 14px;
+				height: 14px;
+				border-radius: (16px / 2);
 				margin: $padding-xs;
 				background-color: $color-bullet-normal;
 				&.active {
@@ -83,10 +76,10 @@ $color-bullet-active: $brand-primary;
 			background: transparent none repeat 0 0;
 		}
 	}
-	&.overlay-plain .zs-slideshow:after {
-		// background-image: url(plain.png);
-	}
-	&.overlay-dots .zs-slideshow:after {
-		// background-image: url(dots.png);
-	}
+	// &.overlay-plain .zs-slideshow:after {
+	// 	background-image: url(plain.png);
+	// }
+	// &.overlay-dots .zs-slideshow:after {
+	// 	background-image: url(dots.png);
+	// }
 }

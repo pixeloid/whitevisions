@@ -15,8 +15,8 @@
 			switchSpeed: 800,
 			interval: 4500,
 			autoplay: true,
-			bullets: true,
-			overlay: 'plain' // false, plain, dots
+			bullets: false,
+			overlay: false // false, plain, dots
 		};
 
 	// The actual plugin constructor
