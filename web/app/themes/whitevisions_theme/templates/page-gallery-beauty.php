@@ -1,8 +1,8 @@
 <section id="gallery-beauty">
 	<div class="container">
-		<h2>
+		<h1>
 		  <?php the_title(); ?>
-		</h2>
+		</h1>
 	</div>
 	<?php the_content() ?>
 </section>

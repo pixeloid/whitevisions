@@ -2,9 +2,9 @@
         <section class="row" id="about">
           <div class="col-md-10 col-md-push-1">
             <div class="blocked">
-              <h2>
+              <h1>
                 <?php the_title(); ?>
-              </h2>
+              </h1>
               <div class="row">
                 <div class="col-sm-10 col-sm-push-2 text-left">
                   <?php the_content(); ?>
@@ -15,7 +15,7 @@
 	                	the_post_thumbnail();
 	                } 
 	                ?>
-                  <h4>Dévai Ákos</h4>
+                  <h2>Dévai Ákos</h2>
                 </div>
               </div>
             </div>

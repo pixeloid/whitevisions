@@ -6,9 +6,9 @@
 
         <div class='col-md-3 sticky-outer'>
           <aside data-sticky_column>
-            <h2>
+            <h1>
             <?php the_title(); ?>
-            </h2>
+            </h1>
             <ul class="nav nav-list hidden-xs" role="tablist">
               <?php $first = true; while (have_posts()) : the_post();  ?>
               <li <?php if($first): ?>class="active" <?php endif; ?>role="presentation">

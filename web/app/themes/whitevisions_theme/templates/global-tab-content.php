@@ -1,7 +1,7 @@
 
-  <h3>
+  <h2>
     <?php the_title(); ?>
-  </h3>
+  </h2>
 	<?php the_content(); ?>
 
 	<?php
