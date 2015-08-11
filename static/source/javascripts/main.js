@@ -280,7 +280,14 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	    };
 
 	$(function () {
-	    APP.init();
+
+		try {
+			APP.init();
+		}
+		catch(err) {
+		    console.log(err.message);
+		}
+
 
 	    $(window).load(function() {
 	    	// APP.swiper1.update();
