@@ -12,7 +12,6 @@ set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
 # This could be overridden in a stage config file
 set :branch, :master
 
-set :deploy_to, -> { "/var/www/virtual/pixeloid.hu/dev/wv/" }
 
 set :wpcli_local_url, "http://localhost:8000"
 

@@ -2,6 +2,9 @@ set :stage, :staging
 set :wpcli_remote_url, 'http://wv.dev.pixeloid.hu'
 
 
+set :deploy_to, -> { "/var/www/virtual/pixeloid.hu/dev/wv/" }
+
+
 # Simple Role Syntax
 # ==================
 role :app, %w{vu2001@pixeloid.hu}
