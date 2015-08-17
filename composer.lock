@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "292a97fd6a3344ee7f69bf518be3a158",
+    "hash": "6011ee886ce42da0ccb8c7e489405162",
     "packages": [
         {
             "name": "composer/installers",
@@ -279,6 +279,27 @@
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
+            "name": "wpackagist-plugin/disable-emojis",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/disable-emojis/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-emojis.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/disable-emojis/",
+            "time": "2015-05-05 08:19:12"
+        },
+        {
             "name": "wpackagist-plugin/really-simple-captcha",
             "version": "1.8.0.1",
             "source": {
@@ -345,7 +366,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "wpackagist-plugin/bootstrap-for-contact-form-7": 20,
-        "wpackagist-plugin/regenerate-thumbnails": 20
+        "wpackagist-plugin/regenerate-thumbnails": 20,
+        "wpackagist-plugin/disable-emojis": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

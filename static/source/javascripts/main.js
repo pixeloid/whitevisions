@@ -1,5 +1,4 @@
 //= require "_modernizr.custom.27778"
-//= require "jquery"
 //= require "swiper"
 //= require "bootstrap"
 //= require "bootstrap-tabcollapse"
