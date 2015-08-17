@@ -280,11 +280,11 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	$(function () {
 
-		try {
 			APP.init();
+		try {
 		}
 		catch(err) {
-		    console.log(err.message);
+		    alert(err.message);
 		}
 
 
