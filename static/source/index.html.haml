@@ -6,7 +6,7 @@
 .wrapper
   .container
     %section#intro.row
-      .col-md-10.col-md-push-1
+      .col-sm-10.col-sm-push-1
         .blocked
           %h1
             ESKÜVŐI FOTÓZÁS, ESKÜVŐ FOTÓS, ESKÜVŐI FOTÓK
@@ -38,7 +38,7 @@
 
   .container
     %section#about.row
-      .col-md-10.col-md-push-1
+      .col-sm-10.col-sm-push-1
         .blocked
           %h1
             Rólam
@@ -58,11 +58,11 @@
 
   .container
     %section.row#info-eskuvo
-      .col-md-10.col-md-push-1
+      .col-sm-10.col-sm-push-1
         .blocked.tabbed
           %div{'data-sticky_parent' => true}
             .row
-              %div.col-md-3.sticky-outer
+              %div.col-sm-3.sticky-outer
                 %aside#affix-eskuvo{'data-sticky_column' => true}
                   %h1
                     ESKÜVŐ FOTÓZÁS
@@ -77,7 +77,7 @@
                     %li{:role => "presentation"}
                       %a{"aria-controls" => "fotosarok", "data-toggle" => "tab", :href => "#fotosarok", :role => "tab"} FOTÓSAROK+FOTÓ
                   %img{:src => "", :alt => ""}/
-              .col-md-8.col-md-push-1.tab-content
+              .col-sm-8.col-sm-push-1.tab-content
                 #kreativ-eskuvo.text-left.tab-pane.fade.active.in
                   %h2
                     KREATÍV ESKÜVŐ FOTÓZÁS
@@ -111,11 +111,11 @@
 
   .container
     %section.row#info-beauty
-      .col-md-10.col-md-push-1
+      .col-sm-10.col-sm-push-1
         .blocked.tabbed
           %div{'data-sticky_parent' => true}
             .row
-              %div.col-md-3.sticky-outer
+              %div.col-sm-3.sticky-outer
                 %aside#affix-beauty{'data-sticky_column' => true}
                   %h1
                     Beauty
@@ -128,7 +128,7 @@
                   
                   %img{:src => "", :alt => ""}/
 
-              .col-md-8.col-md-push-1.tab-content
+              .col-sm-8.col-sm-push-1.tab-content
                 #eskuvoi-haj.tab-pane.fade.active.in
                   %h2
                     ESKÜVŐI HAJ
@@ -167,22 +167,22 @@
   .container
     %section#contact-form
       .row
-        .col-md-10.col-md-push-1
+        .col-sm-10.col-sm-push-1
           .blocked
             %h1 Ajánlatkérés
 
             %form{:role => "form"}
               .row
-                .col-md-4
+                .col-sm-4
                   .form-group
                     %label.control-label{:for => "inputEmail"} Név:
                     %input#inputEmail.form-control{:placeholder => "", :type => "email"}/
                   .form-group
-                    %label.control-label{:for => "inputPassword"} Email:
-                    %input#inputPassword.form-control{:placeholder => "", :type => "password"}/
+                    %label.control-label{:for => "inputPassword"} 
+                    %input#inputPassword.form-control{:placeholder => "Email", :type => "password"}/
                   .form-group
-                    %label.control-label{:for => "inputLabel3"} Telefonszám:
-                    %input#inputLabel3.form-control{:placeholder => "", :type => "text"}/
+                    %label.control-label{:for => "inputLabel3"} 
+                    %input#inputLabel3.form-control{:placeholder => "Telefonszám", :type => "text"}/
                   .form-group
                     %label.control-label{:for => "inputLabel4"} Esküvő dátuma:
                     %input#inputLabel4.form-control.datepicker{:placeholder => "", :type => "date"}/
@@ -198,11 +198,11 @@
                   .form-group
                     %label.control-label{:for => "input8"} Vendégek létszáma:
                     %input#input8.form-control{:placeholder => "", :type => "text"}/
-                .col-md-8
+                .col-sm-8
                   %p
                     Kérlek válaszd ki mely eseményeket szeretnéd megörökíttetni!
                   .row
-                    .col-md-4
+                    .col-sm-4
 
                       .form-group
                         .checkbox
@@ -214,7 +214,7 @@
                           %label{:for => "input6"} 
                             %input{:placeholder => "", :type => "checkbox"}/
                             Polgári szertartás
-                    .col-md-4
+                    .col-sm-4
                       .form-group
                         .checkbox
                           %label{:for => "input6"} 
@@ -225,7 +225,7 @@
                           %label{:for => "input6"} 
                             %input{:placeholder => "", :type => "checkbox"}/
                             Kreatív fotózás
-                    .col-md-4
+                    .col-sm-4
                       .form-group
                         .checkbox
                           %label{:for => "input6"} 
@@ -239,19 +239,19 @@
                   %hr/
 
                   .row
-                    .col-md-4
+                    .col-sm-4
                       .form-group
                         .checkbox
                           %label{:for => "input6"} 
                             %input{:placeholder => "", :type => "checkbox"}/
                             Jegyes fotózás (e-session)
-                    .col-md-4
+                    .col-sm-4
                       .form-group
                         .checkbox
                           %label{:for => "input6"} 
                             %input{:placeholder => "", :type => "checkbox"}/
                             Kreatív fotózás külön napon
-                    .col-md-4
+                    .col-sm-4
                       .form-group
                         .checkbox
                           %label{:for => "input6"} 
@@ -259,7 +259,7 @@
                             Fotósarok
                   
                   .row
-                    .col-md-12
+                    .col-sm-12
                       .form-group
                         %label.control-label Üzenet 
                         %textarea.form-control{:name => "", :cols => "30", :rows => "10"}
@@ -279,7 +279,7 @@
     %footer
       .container
         .row
-          .col-md-10.col-md-push-1
+          .col-sm-10.col-sm-push-1
             .blocked
               
               %h1

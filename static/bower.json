@@ -41,6 +41,7 @@
     "floatlabel.js": "master",
     "bootstrap-datepicker": "~1.4.0",
     "swiper": "~3.0.8",
-    "responsive-toolkit": "~2.5.0"
+    "responsive-toolkit": "~2.5.0",
+    "jquery-placeholder": "~2.1.2"
   }
 }
