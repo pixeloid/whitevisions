@@ -75,7 +75,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			slidesPerView: 'auto',
 	        			centeredSlides: true,
 	        			paginationClickable: true,
-	        	        spaceBetween: 1,
+	        	      //  spaceBetween: 1,
 	        	        preloadImages: true,
 	        	       // lazyLoading: true,
 	        	        autoplayDisableOnInteraction: false
