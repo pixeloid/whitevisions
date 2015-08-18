@@ -1,10 +1,10 @@
-<div class='col-md-10 col-md-push-1'>
+<div class='col-sm-10 col-sm-push-1'>
   <div class='blocked tabbed'>
     <div data-sticky_parent>
       <div class='row'>
         
 
-        <div class='col-md-3 sticky-outer'>
+        <div class='col-sm-3 sticky-outer'>
           <aside data-sticky_column>
             <h1>
             <?php the_title(); ?>
@@ -21,7 +21,7 @@
           </aside>
 
         </div>
-        <div class="col-md-8 col-md-push-1 tab-content">
+        <div class="col-sm-8 col-sm-push-1 tab-content">
           <?php $first = true;  while (have_posts()) : the_post(); ?>
 
           <div class="text-left tab-pane <?php if($first): ?> active in<?php endif; ?>" id="<?php echo $post->post_name; ?>">

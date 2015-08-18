@@ -31,7 +31,7 @@
       <a class='navbar-brand' href='#'>
       <?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
           <div class='site-logo'>
-          <img alt='<?php bloginfo('name'); ?>' title='<?php bloginfo('name'); ?>' src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>'>
+          <img alt='<?php bloginfo('name'); ?>' title='<?php bloginfo('name'); ?>' src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' width="80">
           </div>
       <?php endif; ?>
 
