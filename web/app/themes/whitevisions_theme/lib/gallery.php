@@ -102,8 +102,8 @@ function swiper_gallery($output, $attr) {
                     $output .= "<picture>";
                     $output .= '<!--[if IE 9]> <video style="display: none;"> <![endif]-->';
                     $output .= "    <source srcset=\"{$img_l[0]}\"  media=\"(min-width: 768px)\" />";
-                    $output .= "    <img srcset=\"{$img_s[0]}\" height=\"{$img_s[2]}\" alt=\"\" />\n";
                     $output .= '<!--[if IE 9]> </video> <![endif]-->';
+                    $output .= "    <img srcset=\"{$img_s[0]}\" height=\"{$img_s[2]}\" alt=\"\" />\n";
                     $output .= "</picture>";
 
                     $output .= "</div>\n";
