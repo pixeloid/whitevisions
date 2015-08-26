@@ -123,16 +123,22 @@ function swiper_gallery($output, $attr) {
                 $images = array();
                 foreach ($attachments as $id => $attachment) {   
                     $img = wp_get_attachment_image_src($id, 'separator');                 
-                    $images[] = "\"{$img[0]}\"";
+                    //$images[] = "\"{$img[0]}\"";
+                    $images[] = $img;
                 }
-
-                $image_list = implode(',', $images);
+//                $image_list = implode(',', $images);
+                
+  //              $img = wp_get_attachment_image_src(reset($attachments), 'separator');                 
 
 
                 $output .= "<section>";
-                $output .= "  <div class='separator-illustration' data-zs-overlay='dots' data-zs-speed='20000' data-zs-src='[$image_list]'>";
-                $output .= "    <div class='separator-illustration__shadow'></div>";
-                $output .= "  </div>";
+
+                $output .= "<div class='separator-illustration' data-cover-ratio='0.75' data-height='".$images[0][2]."' data-image='".$images[0][0]."' data-width='".$images[0][1]."'>";
+                $output .= "  <div class='separator-illustration__shadow'></div>";
+                $output .= "</div>";
+                // $output .= "  <div class='separator-illustration' data-zs-overlay='dots' data-zs-speed='20000' data-zs-src='[$image_list]'>";
+                // $output .= "    <div class='separator-illustration__shadow'></div>";
+                // $output .= "  </div>";
                 $output .= "</section>";
 
                 break;

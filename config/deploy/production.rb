@@ -1,19 +1,19 @@
 set :stage, :production
 set :wpcli_remote_url, 'http://www.whitevisions.hu'
-set :tmp_dir, 'var/www/virtual/whitevisions.com/tmp'
+set :tmp_dir, '/var/www/virtual/whitevisions.com/tmp'
 
 set :deploy_to, -> { "/var/www/virtual/whitevisions.com" }
 
 
 # Simple Role Syntax
 # ==================
-role :app, %w{root@pixeloid.hu}
-role :web, %w{root@pixeloid.hu}
-role :db,  %w{root@pixeloid.hu}
+role :app, %w{vu2075@pixeloid.hu}
+role :web, %w{vu2075@pixeloid.hu}
+role :db,  %w{vu2075@pixeloid.hu}
 
 # Extended Server Syntax
 # ======================
-server 'pixeloid.hu', user: 'root', roles: %w{web app db}
+server 'pixeloid.hu', user: 'vu2075', roles: %w{web app db}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
