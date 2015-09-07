@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6011ee886ce42da0ccb8c7e489405162",
+    "hash": "f5f48bc1c8287c721960efcaba3f111b",
     "packages": [
         {
             "name": "composer/installers",
@@ -341,6 +341,27 @@
             "time": "2015-04-23 22:02:14"
         },
         {
+            "name": "wpackagist-plugin/seo-wizard",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/seo-wizard/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/seo-wizard.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/seo-wizard/",
+            "time": "2015-05-18 06:53:53"
+        },
+        {
             "name": "wpackagist-plugin/types",
             "version": "1.7",
             "source": {
@@ -367,7 +388,8 @@
     "stability-flags": {
         "wpackagist-plugin/bootstrap-for-contact-form-7": 20,
         "wpackagist-plugin/regenerate-thumbnails": 20,
-        "wpackagist-plugin/disable-emojis": 20
+        "wpackagist-plugin/disable-emojis": 20,
+        "wpackagist-plugin/seo-wizard": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -27,7 +27,7 @@
                 <?php echo types_render_field('telefon') ?>
               </li>
               <li>
-                <a href="https://www.facebook.com/<?php echo types_render_field('facebook') ?>">
+                <a href="https://www.facebook.com/<?php echo types_render_field('facebook') ?>" target="_blank">
                   <i class="fa fa-facebook"></i>
                   <?php echo str_replace('https://', '', types_render_field('facebook')); ?>
                 </a>

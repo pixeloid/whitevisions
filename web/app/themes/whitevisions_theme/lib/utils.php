@@ -27,13 +27,64 @@ function my_customize_register( $wp_customize ) {
 	    'section'  => 'themeslug_logo_section',
 	    'settings' => 'themeslug_logo',
 	) ) );
+
+
+
+	$wp_customize->add_section('seo_section', array(
+	    'title'    => __('SEO', 'themeslug'),
+	    'description' => 'META tagek',
+	    'priority' => 40,
+	));
+
+	$wp_customize->add_setting('meta_description');
+	
+	$wp_customize->add_control('meta_description_text', array(
+	    'label'      => __('Meta Description', 'themename'),
+	    'section'    => 'seo_section',
+	    'settings'   => 'meta_description',
+	));
+	$wp_customize->add_setting('meta_keywords');
+	
+	$wp_customize->add_control('meta_keywords_text', array(
+	    'label'      => __('Meta Keywords', 'themename'),
+	    'section'    => 'seo_section',
+	    'settings'   => 'meta_keywords',
+	));
+
+
 }
+
+// add_action('customize_register','seo_customize_register');
+// function seo_customize_register( $wp_customize ) {
+
+// 	// $wp_customize->add_section('seo', array(
+// 	//     'title'    => __('SEO', 'themeslug'),
+// 	//     'description' => '',
+// 	//     'priority' => 40,
+// 	// ));
+
+
+// }
+
+
+
+
+
+
+
+
+
 
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+
+
+
 
 
 add_action( 'after_setup_theme', 'add_image_sizes' );
