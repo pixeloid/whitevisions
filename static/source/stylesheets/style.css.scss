@@ -124,6 +124,70 @@ footer .blocked{
 	}
 	color: #fff;
 }
+
+#gallery{
+
+	h1{
+		margin-top: -20px;
+
+		@media (min-width: $screen-sm-min) { 
+			margin-top: -20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.gallery-inner{
+		position: relative;
+		overflow: hidden;
+		.text{
+			position: absolute;
+			top:0;
+			left: 0;
+			padding: 50% 20% 0;
+			text-align: center;
+			color: #fff;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0);
+			@include text-shadow(0 2px 2px rgba(0,2,0,.38));
+			@include transition(padding-top 0.2s 0, background 0.4s 0);
+			h2{
+				font-size: 2em;
+				font-family: 'Gotham Medium', sans-serif;
+				margin-top: 0;
+			}
+
+			p{
+				@include opacity(0);
+				@include transition(opacity 0.2s 0);
+			}
+
+		}
+
+		img{
+			@include transition(all .3s ease-in-out);
+
+		}
+
+
+		&:hover{
+			.text{
+				@include transition(padding-top 0.5s 0, background 0.4s 0);
+				padding-top:40%; 
+				background: rgba(0,0,0,0.5);
+				p{
+					@include opacity(1);
+					@include transition(opacity 0.5s 0);
+				}
+
+			}
+			img{
+				@include transform(scale(1.03));
+			}
+		}
+
+	}
+}
 #gallery-beauty,
 #gallery-eskuvo{
 	margin-top: 55px; 
