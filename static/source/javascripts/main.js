@@ -25,8 +25,8 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	var s;
 	
 	APP = {
-	    	swiper1: null,
-	    	swiper2: null,
+	    	swiper: null,
+	    	//swiper2: null,
 
 	        settings : {
 	        },
@@ -36,12 +36,12 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	           
 	            this.initTabbed();
 	           	this.initHomeScreen();
-	            this.initPreload();
 	            this.initSwiper();
 	            this.initForm();
 	            this.initNavigation();
 	            this.initSeparator();
 	            this.initSticky();
+	            this.initPreload();
 
 
 
@@ -56,12 +56,27 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        initPreload: function(){
 
-	        	$('#home, .wrapper').hide();
+	        	$('#home, .wrapper, .wrapper-basic').hide();
 
 	        	$(window).load(function() {
 
-	        		$('#home, .wrapper').fadeIn();
+	        		$('#home, .wrapper, .wrapper-basic').fadeIn();
 	        		$('.la-ball-clip-rotate').hide();
+
+	        		if (APP.swiper) {
+	        			APP.swiper.update();
+	        		};
+
+	        		if(window.location.hash){
+
+	        			var $target = $(window.location.hash);
+
+	        			$target = ($target.attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $target.parent() : $target;
+	        			$('html, body').stop().delay(800).animate({
+	        			    scrollTop: ( ($target.attr('id') == 'home') ? 0 : $target.offset().top) - 70
+	        			}, 100);
+	        		}
+
 
 	        	});
 
@@ -70,9 +85,11 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        initSwiper: function () {
 
+	        		if (!$('#gallery').length) return;
+
 	        		var swiperConfig = {
-	        			nextButton: '#gallery-eskuvo .swiper-button-next',
-	        			prevButton: '#gallery-eskuvo .swiper-button-prev',
+	        			nextButton: '#gallery .swiper-button-next',
+	        			prevButton: '#gallery .swiper-button-prev',
 	        			slidesPerView: 'auto',
 	        			centeredSlides: true,
 	        			paginationClickable: true,
@@ -86,15 +103,15 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			swiperConfig.autoplay = 2500;	
 	        		}
 
-	        		$('.swiper-slide img').height($(window).height()-150);
+	        		$('.swiper-slide img').height($(window).height()-230);
 
 
-	        		APP.swiper1 = new Swiper('#gallery-eskuvo .swiper-container', swiperConfig);
+	        		APP.swiper = new Swiper('#gallery .swiper-container', swiperConfig);
 
-	        		swiperConfig.nextButton = '#gallery-beauty .swiper-button-next';
-	        		swiperConfig.prevButton = '#gallery-beauty .swiper-button-prev';
+	        		// swiperConfig.nextButton = '#gallery-beauty .swiper-button-next';
+	        		// swiperConfig.prevButton = '#gallery-beauty .swiper-button-prev';
 
-	        		APP.swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
+	        		// APP.swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
 
 
 
@@ -154,13 +171,14 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        	$('#top-nav .nav > li').eq(Math.floor($('#top-nav .nav > li').length / 2) - 1).addClass('center');
 
-	        	$('.navbar-fixed-top a').click(function(event) {
+	        	$('body.home .navbar-fixed-top a').click(function(event) {
 	        		event.preventDefault();
 	        	    var $anchor = $(this);
-	        	    var $target = $($anchor.attr('href'));
+	        	    var hash = $anchor.attr('href').replace('/', '');
+	        	    var $target = $(hash);
 	        	    if($target.length){
 
-	        	    	$target = ($($anchor.attr('href')).attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $($anchor.attr('href')).parent() : $($anchor.attr('href'));
+	        	    	$target = ($target.attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $target.parent() : $target;
 
 	        	    	$('html, body').stop().animate({
 	        	    	    scrollTop: ( ($target.attr('id') == 'home') ? 0 : $target.offset().top) - 70
@@ -168,6 +186,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        	    }
 
 	        	});
+
 
 
 	        	// Highlight the top nav as scrolling occurs
@@ -194,10 +213,11 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        		if( viewport.is('<=xs') ) return false;
 
 	        		$('#home').css({'height':($(window).height())+'px'});
-	        		$('.swiper-slide img').height($(window).height()-150);
+	        		$('.swiper-slide img').height($(window).height()-230);
 
-	        		APP.swiper1.update();
-	        		APP.swiper2.update();
+	        		if (APP.swiper) {
+	        			APP.swiper.update();
+	        		};
 
 	        		$(document.body).trigger("sticky_kit:recalc");
 
@@ -238,8 +258,8 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			})
 	        		}
 
-	        		APP.swiper1.update();
-	        		APP.swiper2.update();
+	        		//APP.swiper.update();
+	        		//APP.swiper2.update();
 
 
 

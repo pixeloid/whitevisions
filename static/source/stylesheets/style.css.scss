@@ -109,7 +109,7 @@ section{
 }
 
 
-.wrapper{
+.wrapper, .wrapper-basic{
 	background: #fff url(../images/retina_dust.png);
 	position: relative;
 	z-index: 100;
@@ -125,7 +125,9 @@ footer .blocked{
 	color: #fff;
 }
 
-#gallery{
+#gallery-links{
+	padding-top: 65px; 
+	margin-top: 55px;
 
 	h1{
 		margin-top: -20px;
@@ -139,7 +141,9 @@ footer .blocked{
 	.gallery-inner{
 		position: relative;
 		overflow: hidden;
+		margin-bottom: $grid-gutter-width;
 		.text{
+			cursor: pointer;
 			position: absolute;
 			top:0;
 			left: 0;
@@ -153,7 +157,7 @@ footer .blocked{
 			@include transition(padding-top 0.2s 0, background 0.4s 0);
 			h2{
 				font-size: 2em;
-				font-family: 'Gotham Medium', sans-serif;
+				font-family: 'Gotham Book', sans-serif;
 				margin-top: 0;
 			}
 
@@ -172,6 +176,7 @@ footer .blocked{
 
 		&:hover{
 			.text{
+				cursor: pointer;
 				@include transition(padding-top 0.5s 0, background 0.4s 0);
 				padding-top:40%; 
 				background: rgba(0,0,0,0.5);
@@ -188,12 +193,21 @@ footer .blocked{
 
 	}
 }
-#gallery-beauty,
-#gallery-eskuvo{
-	margin-top: 55px; 
-
+#gallery{
+	margin-top: 85px; 
+	text-align: center;
 	h1{
 		margin-top: -20px;
+	}
+
+	.gallery-close{
+//		font-size: 55px;
+		text-transform: uppercase;
+		font-family: "Gotham Medium", sans-serif;
+		z-index: 1000;
+		display: block;
+
+		padding-top: 20px;
 	}
 
 	@media (min-width: $screen-sm-min) { 

@@ -1,7 +1,6 @@
 <?php 
 
 add_action('print_media_templates', function(){
-
   // define your backbone template;
   // the "tmpl-" prefix is required,
   // and your input field should have a data-setting attribute
@@ -46,6 +45,7 @@ add_action('print_media_templates', function(){
 add_filter('post_gallery', 'swiper_gallery', 10, 2);
 
 function swiper_gallery($output, $attr) {
+  
     global $post;
 
     if (isset($attr['orderby'])) {
@@ -144,7 +144,7 @@ function swiper_gallery($output, $attr) {
                 break;
         
         default:
-            # code...
+            $output = 'auhdsvoi sadfvs8';
             break;
     }
 

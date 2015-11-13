@@ -23,20 +23,6 @@ use Roots\Sage\Wrapper;
       <div></div>
     </div>
 
-    <div class="wrapper" role="document" style="display: none;">
-        <main class="main" role="main">
           <?php include Wrapper\template_path(); ?>
-        </main><!-- /.main -->
-        <?php if (Config\display_sidebar()) : ?>
-          <aside class="sidebar" role="complementary">
-            <?php include Wrapper\sidebar_path(); ?>
-          </aside><!-- /.sidebar -->
-        <?php endif; ?>
-        <?php
-          do_action('get_footer');
-          get_template_part('templates/footer');
-          wp_footer();
-        ?>
-   </div><!-- /.wrapper -->
   </body>
 </html>

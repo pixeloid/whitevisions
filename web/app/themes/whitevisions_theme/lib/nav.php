@@ -71,7 +71,7 @@ namespace Roots\Sage\Nav;
                     $page = get_post($page_id);
                     $slug = $page->post_name;
 
-                    $atts['href'] = ! empty( $slug ) ? '#'.$slug : '';
+                    $atts['href'] = ! empty( $slug ) ? '/#'.$slug : '';
                 }
                 $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
                 $attributes = '';

@@ -9943,7 +9943,7 @@ var ResponsiveBootstrapToolkit = (function($){
     return self;
 
 })(jQuery);
-/*! http://mths.be/placeholder v2.1.2 by @mathias */
+/*! http://mths.be/placeholder v2.1.3 by @mathias */
 
 (function(factory) {
     if (typeof define === 'function' && define.amd) {
@@ -9958,13 +9958,14 @@ var ResponsiveBootstrapToolkit = (function($){
 }(function($) {
 
     // Opera Mini v7 doesn't support placeholder although its DOM seems to indicate so
-    var isOperaMini = Object.prototype.toString.call(window.operamini) == '[object OperaMini]';
+    var isOperaMini = Object.prototype.toString.call(window.operamini) === '[object OperaMini]';
     var isInputSupported = 'placeholder' in document.createElement('input') && !isOperaMini;
     var isTextareaSupported = 'placeholder' in document.createElement('textarea') && !isOperaMini;
     var valHooks = $.valHooks;
     var propHooks = $.propHooks;
     var hooks;
     var placeholder;
+    var settings = {};
 
     if (isInputSupported && isTextareaSupported) {
 
@@ -9972,20 +9973,17 @@ var ResponsiveBootstrapToolkit = (function($){
             return this;
         };
 
-        placeholder.input = placeholder.textarea = true;
+        placeholder.input = true;
+        placeholder.textarea = true;
 
     } else {
-
-        var settings = {};
 
         placeholder = $.fn.placeholder = function(options) {
 
             var defaults = {customClass: 'placeholder'};
             settings = $.extend({}, defaults, options);
 
-            var $this = this;
-            $this
-                .filter((isInputSupported ? 'textarea' : ':input') + '[placeholder]')
+            return this.filter((isInputSupported ? 'textarea' : ':input') + '[placeholder]')
                 .not('.'+settings.customClass)
                 .bind({
                     'focus.placeholder': clearPlaceholder,
@@ -9993,7 +9991,6 @@ var ResponsiveBootstrapToolkit = (function($){
                 })
                 .data('placeholder-enabled', true)
                 .trigger('blur.placeholder');
-            return $this;
         };
 
         placeholder.input = isInputSupported;
@@ -10001,9 +9998,10 @@ var ResponsiveBootstrapToolkit = (function($){
 
         hooks = {
             'get': function(element) {
-                var $element = $(element);
 
+                var $element = $(element);
                 var $passwordInput = $element.data('placeholder-password');
+
                 if ($passwordInput) {
                     return $passwordInput[0].value;
                 }
@@ -10011,26 +10009,47 @@ var ResponsiveBootstrapToolkit = (function($){
                 return $element.data('placeholder-enabled') && $element.hasClass(settings.customClass) ? '' : element.value;
             },
             'set': function(element, value) {
-                var $element = $(element);
 
-                var $passwordInput = $element.data('placeholder-password');
-                if ($passwordInput) {
-                    return $passwordInput[0].value = value;
+                var $element = $(element);
+                var $replacement;
+                var $passwordInput;
+
+                if (value !== '') {
+
+                    $replacement = $element.data('placeholder-textinput');
+                    $passwordInput = $element.data('placeholder-password');
+
+                    if ($replacement) {
+                        clearPlaceholder.call($replacement[0], true, value) || (element.value = value);
+                        $replacement[0].value = value;
+
+                    } else if ($passwordInput) {
+                        clearPlaceholder.call(element, true, value) || ($passwordInput[0].value = value);
+                        element.value = value;
+                    }
                 }
 
                 if (!$element.data('placeholder-enabled')) {
-                    return element.value = value;
-                }
-                if (value === '') {
                     element.value = value;
-                    // Issue #56: Setting the placeholder causes problems if the element continues to have focus.
+                    return $element;
+                }
+
+                if (value === '') {
+                    
+                    element.value = value;
+                    
+                    // Setting the placeholder causes problems if the element continues to have focus.
                     if (element != safeActiveElement()) {
                         // We can't use `triggerHandler` here because of dummy text/password inputs :(
                         setPlaceholder.call(element);
                     }
-                } else if ($element.hasClass(settings.customClass)) {
-                    clearPlaceholder.call(element, true, value) || (element.value = value);
+
                 } else {
+                    
+                    if ($element.hasClass(settings.customClass)) {
+                        clearPlaceholder.call(element);
+                    }
+
                     element.value = value;
                 }
                 // `set` can not return `undefined`; see http://jsapi.info/jquery/1.7.1/val#L2363
@@ -10042,6 +10061,7 @@ var ResponsiveBootstrapToolkit = (function($){
             valHooks.input = hooks;
             propHooks.value = hooks;
         }
+
         if (!isTextareaSupported) {
             valHooks.textarea = hooks;
             propHooks.value = hooks;
@@ -10050,8 +10070,12 @@ var ResponsiveBootstrapToolkit = (function($){
         $(function() {
             // Look for forms
             $(document).delegate('form', 'submit.placeholder', function() {
+                
                 // Clear the placeholder values so they don't get submitted
-                var $inputs = $('.'+settings.customClass, this).each(clearPlaceholder);
+                var $inputs = $('.'+settings.customClass, this).each(function() {
+                    clearPlaceholder.call(this, true, '');
+                });
+
                 setTimeout(function() {
                     $inputs.each(setPlaceholder);
                 }, 10);
@@ -10064,60 +10088,91 @@ var ResponsiveBootstrapToolkit = (function($){
                 this.value = '';
             });
         });
-
     }
 
     function args(elem) {
         // Return an object of element attributes
         var newAttrs = {};
         var rinlinejQuery = /^jQuery\d+$/;
+
         $.each(elem.attributes, function(i, attr) {
             if (attr.specified && !rinlinejQuery.test(attr.name)) {
                 newAttrs[attr.name] = attr.value;
             }
         });
+
         return newAttrs;
     }
 
     function clearPlaceholder(event, value) {
+        
         var input = this;
         var $input = $(input);
-        if (input.value == $input.attr('placeholder') && $input.hasClass(settings.customClass)) {
+        
+        if (input.value === $input.attr('placeholder') && $input.hasClass(settings.customClass)) {
+            
+            input.value = '';
+            $input.removeClass(settings.customClass);
+
             if ($input.data('placeholder-password')) {
+
                 $input = $input.hide().nextAll('input[type="password"]:first').show().attr('id', $input.removeAttr('id').data('placeholder-id'));
+                
                 // If `clearPlaceholder` was called from `$.valHooks.input.set`
                 if (event === true) {
-                    return $input[0].value = value;
+                    $input[0].value = value;
+
+                    return value;
                 }
+
                 $input.focus();
+
             } else {
-                input.value = '';
-                $input.removeClass(settings.customClass);
                 input == safeActiveElement() && input.select();
             }
         }
     }
 
-    function setPlaceholder() {
+    function setPlaceholder(event) {
         var $replacement;
         var input = this;
         var $input = $(input);
-        var id = this.id;
+        var id = input.id;
+
+        // If the placeholder is activated, triggering blur event (`$input.trigger('blur')`) should do nothing.
+        if (event && event.type === 'blur') {
+            
+            if ($input.hasClass(settings.customClass)) {
+                return;
+            }
+
+            if (input.type === 'password') {
+                $replacement = $input.prevAll('input[type="text"]:first');
+                if ($replacement.length > 0 && $replacement.is(':visible')) {
+                    return;
+                }
+            }
+        }
+
         if (input.value === '') {
             if (input.type === 'password') {
                 if (!$input.data('placeholder-textinput')) {
+                    
                     try {
                         $replacement = $input.clone().prop({ 'type': 'text' });
                     } catch(e) {
                         $replacement = $('<input>').attr($.extend(args(this), { 'type': 'text' }));
                     }
+
                     $replacement
                         .removeAttr('name')
                         .data({
+                            'placeholder-enabled': true,
                             'placeholder-password': $input,
                             'placeholder-id': id
                         })
                         .bind('focus.placeholder', clearPlaceholder);
+
                     $input
                         .data({
                             'placeholder-textinput': $replacement,
@@ -10125,11 +10180,23 @@ var ResponsiveBootstrapToolkit = (function($){
                         })
                         .before($replacement);
                 }
-                $input = $input.removeAttr('id').hide().prevAll('input[type="text"]:first').attr('id', id).show();
-                // Note: `$input[0] != input` now!
+
+                input.value = '';
+                $input = $input.removeAttr('id').hide().prevAll('input[type="text"]:first').attr('id', $input.data('placeholder-id')).show();
+
+            } else {
+                
+                var $passwordInput = $input.data('placeholder-password');
+
+                if ($passwordInput) {
+                    $passwordInput[0].value = '';
+                    $input.attr('id', $input.data('placeholder-id')).show().nextAll('input[type="password"]:last').hide().removeAttr('id');
+                }
             }
+
             $input.addClass(settings.customClass);
             $input[0].value = $input.attr('placeholder');
+
         } else {
             $input.removeClass(settings.customClass);
         }
@@ -10137,12 +10204,10 @@ var ResponsiveBootstrapToolkit = (function($){
 
     function safeActiveElement() {
         // Avoid IE9 `document.activeElement` of death
-        // https://github.com/mathiasbynens/jquery-placeholder/pull/99
         try {
             return document.activeElement;
         } catch (exception) {}
     }
-
 }));
 /**
  * Parallax ImageScroll - jQuery plugin
@@ -10630,8 +10695,8 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	var s;
 	
 	APP = {
-	    	swiper1: null,
-	    	swiper2: null,
+	    	swiper: null,
+	    	//swiper2: null,
 
 	        settings : {
 	        },
@@ -10641,12 +10706,12 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	           
 	            this.initTabbed();
 	           	this.initHomeScreen();
-	            this.initPreload();
 	            this.initSwiper();
 	            this.initForm();
 	            this.initNavigation();
 	            this.initSeparator();
 	            this.initSticky();
+	            this.initPreload();
 
 
 
@@ -10661,12 +10726,27 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        initPreload: function(){
 
-	        	$('#home, .wrapper').hide();
+	        	$('#home, .wrapper, .wrapper-basic').hide();
 
 	        	$(window).load(function() {
 
-	        		$('#home, .wrapper').fadeIn();
+	        		$('#home, .wrapper, .wrapper-basic').fadeIn();
 	        		$('.la-ball-clip-rotate').hide();
+
+	        		if (APP.swiper) {
+	        			APP.swiper.update();
+	        		};
+
+	        		if(window.location.hash){
+
+	        			var $target = $(window.location.hash);
+
+	        			$target = ($target.attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $target.parent() : $target;
+	        			$('html, body').stop().delay(800).animate({
+	        			    scrollTop: ( ($target.attr('id') == 'home') ? 0 : $target.offset().top) - 70
+	        			}, 100);
+	        		}
+
 
 	        	});
 
@@ -10675,9 +10755,11 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        initSwiper: function () {
 
+	        		if (!$('#gallery').length) return;
+
 	        		var swiperConfig = {
-	        			nextButton: '#gallery-eskuvo .swiper-button-next',
-	        			prevButton: '#gallery-eskuvo .swiper-button-prev',
+	        			nextButton: '#gallery .swiper-button-next',
+	        			prevButton: '#gallery .swiper-button-prev',
 	        			slidesPerView: 'auto',
 	        			centeredSlides: true,
 	        			paginationClickable: true,
@@ -10691,15 +10773,15 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			swiperConfig.autoplay = 2500;	
 	        		}
 
-	        		$('.swiper-slide img').height($(window).height()-150);
+	        		$('.swiper-slide img').height($(window).height()-230);
 
 
-	        		APP.swiper1 = new Swiper('#gallery-eskuvo .swiper-container', swiperConfig);
+	        		APP.swiper = new Swiper('#gallery .swiper-container', swiperConfig);
 
-	        		swiperConfig.nextButton = '#gallery-beauty .swiper-button-next';
-	        		swiperConfig.prevButton = '#gallery-beauty .swiper-button-prev';
+	        		// swiperConfig.nextButton = '#gallery-beauty .swiper-button-next';
+	        		// swiperConfig.prevButton = '#gallery-beauty .swiper-button-prev';
 
-	        		APP.swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
+	        		// APP.swiper2 = new Swiper('#gallery-beauty .swiper-container', swiperConfig);
 
 
 
@@ -10759,13 +10841,14 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        	$('#top-nav .nav > li').eq(Math.floor($('#top-nav .nav > li').length / 2) - 1).addClass('center');
 
-	        	$('.navbar-fixed-top a').click(function(event) {
+	        	$('body.home .navbar-fixed-top a').click(function(event) {
 	        		event.preventDefault();
 	        	    var $anchor = $(this);
-	        	    var $target = $($anchor.attr('href'));
+	        	    var hash = $anchor.attr('href').replace('/', '');
+	        	    var $target = $(hash);
 	        	    if($target.length){
 
-	        	    	$target = ($($anchor.attr('href')).attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $($anchor.attr('href')).parent() : $($anchor.attr('href'));
+	        	    	$target = ($target.attr('id').indexOf("info") > -1 && viewport.is('<=xs')) ? $target.parent() : $target;
 
 	        	    	$('html, body').stop().animate({
 	        	    	    scrollTop: ( ($target.attr('id') == 'home') ? 0 : $target.offset().top) - 70
@@ -10773,6 +10856,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        	    }
 
 	        	});
+
 
 
 	        	// Highlight the top nav as scrolling occurs
@@ -10799,10 +10883,11 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        		if( viewport.is('<=xs') ) return false;
 
 	        		$('#home').css({'height':($(window).height())+'px'});
-	        		$('.swiper-slide img').height($(window).height()-150);
+	        		$('.swiper-slide img').height($(window).height()-230);
 
-	        		APP.swiper1.update();
-	        		APP.swiper2.update();
+	        		if (APP.swiper) {
+	        			APP.swiper.update();
+	        		};
 
 	        		$(document.body).trigger("sticky_kit:recalc");
 
@@ -10843,8 +10928,8 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			})
 	        		}
 
-	        		APP.swiper1.update();
-	        		APP.swiper2.update();
+	        		//APP.swiper.update();
+	        		//APP.swiper2.update();
 
 
 

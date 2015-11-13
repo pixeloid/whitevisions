@@ -16,7 +16,7 @@
 
     %link{href: 'stylesheets/style.css', type: 'text/css', rel: 'stylesheet' }
 
-  %body
+  %body.home
     #fb-root
       :javascript
         (function(d, s, id) {
@@ -42,21 +42,15 @@
         .collapse.navbar-collapse#top-nav-collapse
           %ul.nav.navbar-nav
             %li
-              %a{href: '#home'} FŐOLDAL
+              %a{href: '/#home'} FŐOLDAL
             %li
-              %a{href: '#intro'} BEVEZETŐ
+              %a{href: '/#intro'} BEVEZETŐ
             %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              %a{"aria-expanded" => "false", :href => "#gallery-links", :role => "button"}
                 GALÉRIA
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#gallery-eskuvo"} Esküvő
-                %li
-                  %a{:href => "#gallery-beauty"} Beauty
 
             %li
-              %a{href: '#about'} RÓLAM
+              %a{href: '/#about'} RÓLAM
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                 Info
@@ -80,6 +74,8 @@
               
         / /.navbar-collapse
       / /.container-fluid
+    .la-ball-clip-rotate
+      %div
 
     = yield
 
