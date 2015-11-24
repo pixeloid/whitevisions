@@ -34,6 +34,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        init: function () {
 	            s = this.settings;
 	           
+	            this.initPreload();
 	            this.initTabbed();
 	           	this.initHomeScreen();
 	            this.initSwiper();
@@ -41,7 +42,6 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	            this.initNavigation();
 	            this.initSeparator();
 	            this.initSticky();
-	            this.initPreload();
 
 
 

@@ -11,7 +11,7 @@
     </h1>
     <div class='row'>
     
-    <?php if($num == 2 || $num == 4): ?>
+    <?php if($num == 2 || $num == 4 || $num > 5): ?>
 
         <?php $first = true; while (have_posts()) : the_post();  ?>
         <div class='col-sm-6'>

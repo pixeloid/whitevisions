@@ -79,23 +79,26 @@
 		height: 400px;
 	}
 
-	.separator-illustration__shadow{
-		height: 150px;
-
-		@media (min-width: $screen-sm-min) { 
-			height: 400px;
-		}
-		position: absolute;
-		width: 100%;
-		top:0;
-		left: 0;
-		z-index: 1000;
-		@include box-shadow(inset 0 0px 6px rgba(0,24,0,.6));
-
-	}
 
 
 }
+
+.separator-illustration__shadow{
+		height: 400px;
+
+	@media (min-width: $screen-sm-min) { 
+	}
+	position: absolute;
+	width: 100%;
+	top:0;
+	left: 0;
+	z-index: 1000;
+	@include box-shadow(inset 0 0px 6px rgba(0,24,0,.6));
+
+}
+
+
+
 .blocked{
 	@include shadow-box;
 }
