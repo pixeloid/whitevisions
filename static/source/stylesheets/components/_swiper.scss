@@ -22,11 +22,13 @@
 }
 .swiper-button-prev{
 	background-image: url(../images/arrow_left.svg);
-	background-position: 20px 50% ;
+	@media (min-width: $screen-sm-min) { 
+		background-position: 20px 50% ;
+	}
 }
 .swiper-button-next,
 .swiper-button-prev{
-	display: none;
+	//display: none;
 	@media (min-width: $screen-sm-min) { 
 		display: block;
 		width: 40%;
@@ -37,6 +39,11 @@
 		margin: 0;
 	}
 }
+// .swiper-wrapper{
+// 	@media (max-width: 400px) { 
+// 		display: block;
+// 	}
+// }
 
 .swiper-slide {
     text-align: center;
@@ -46,11 +53,17 @@
 	
 	img{
 
-		height: 190px;
-		max-height: 190px;
+		// height: auto;
+		// width: 100%;
+		// margin-bottom: 1px;
+		height: 280px;
+		max-height: 280px;
+
 		@media (min-width: 400px) { 
-			height: 280px;
-			max-height: 280px;
+			margin-bottom: 0;
+			width: auto;
+			height: 350px;
+			max-height: 350px;
 		}
 
 
@@ -67,13 +80,13 @@
 
 		/* Large devices (large desktops, 1200px and up) */
 		@media (min-width: $screen-lg-min) { 
-			height: 800px;
-			max-height: 800px;
+			height: 700px;
+			max-height: 700px;
 		}
 		/* Large devices (large desktops, 1200px and up) */
 		@media (min-width: 1500px) { 
-			height: 1000px;
-			max-height: 1000px;
+			height: 800px;
+			max-height: 800px;
 		}
 	}
 
