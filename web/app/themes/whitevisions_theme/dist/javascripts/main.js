@@ -10668,6 +10668,25 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        		$('#home, .wrapper, .wrapper-basic').fadeIn();
 	        		$('.la-ball-clip-rotate').hide();
 
+
+	        			var longest = null;
+	        			var longestImg = null;
+	        			$('#gallery img').each(function () {
+	        				var current = ($(this).width() + 20) / $(this).height();
+
+	        				if(Math.max(current, longest) > longest){
+	        					longest = current;
+	        					longestImg = $(this);
+
+	        				}
+	        			})
+
+	        			$('#gallery img').css('height', ($(window).width() / longest));
+	        		if(viewport.is('<xs')){
+	        		}
+
+
+
 	        		if (APP.swiper) {
 	        			APP.swiper.update();
 	        		};
