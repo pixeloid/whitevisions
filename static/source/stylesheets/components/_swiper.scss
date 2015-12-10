@@ -18,7 +18,10 @@
 
 .swiper-button-next{
 	background-image: url(../images/arrow_right.svg);
-	background-position: right 50% ;
+	background-position: 5px 50% ;
+	@media (min-width: $screen-sm-min) { 
+		background-position: right 50% ;
+	}
 }
 .swiper-button-prev{
 	background-image: url(../images/arrow_left.svg);
@@ -28,7 +31,7 @@
 }
 .swiper-button-next,
 .swiper-button-prev{
-	//display: none;
+	width: 20px;
 	@media (min-width: $screen-sm-min) { 
 		display: block;
 		width: 40%;
