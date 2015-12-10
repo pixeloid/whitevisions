@@ -10682,7 +10682,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			// })
 
 		        	if(viewport.is('<=sm')){
-	        			$('#gallery img').css('height', (($(window).width() - 45) / (4/3)) );
+	        			$('#gallery img').css('height', (($(window).width() - 60) / (4/3)) );
 	        		}
 
 
