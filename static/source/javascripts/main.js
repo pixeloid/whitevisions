@@ -76,7 +76,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        			// 	}
 	        			// })
 
-		        	if(viewport.is('<=xs')){
+		        	if(viewport.is('<=sm')){
 	        			$('#gallery img').css('height', (($(window).width() - 45) / (4/3)) );
 	        		}
 
