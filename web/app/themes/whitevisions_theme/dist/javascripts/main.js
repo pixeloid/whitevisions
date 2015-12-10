@@ -10665,7 +10665,7 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 
 	        	$(window).load(function() {
 
-	        		$('#home, .wrapper, .wrapper-basic').fadeIn();
+	        		$('#home, .wrapper, .wrapper-basic').fadeIn(1000);
 	        		$('.la-ball-clip-rotate').hide();
 
 
