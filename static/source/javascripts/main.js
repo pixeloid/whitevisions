@@ -52,6 +52,12 @@ function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua
 	        	$('.wrapper').css({'margin-top':($(window).height())+'px'});
 	        	css_browser_selector(navigator.userAgent);
 
+	        	if(!$('#gallery').length){
+	        		$('#top-nav-collapse li a').each(function(e){
+	        			$(this).attr('href', $(this).attr('href').replace('/#', '#'));
+	        		})
+	        	}
+
 	        },
 
 	        initPreload: function(){

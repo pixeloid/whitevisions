@@ -50,6 +50,10 @@
 
 }
 
+body{
+	-webkit-backface-visibility: hidden;
+}
+
 
 #home{
   width: 100%;
